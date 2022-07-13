@@ -1,0 +1,21 @@
+.Footer {
+  background-color: var(--color-dark);
+  text-align: end;
+  width: 100%;
+  padding: 1.5em;
+  color: var(--color-white);
+  font-family: var(--font-prim);
+  font-weight: 500;
+  position: relative;
+  
+}
+
+.Footer::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--color-white);
+  height: 2px;
+  width: 18%;
+}

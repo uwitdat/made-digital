@@ -12,6 +12,10 @@
     z-index: 1;
   }
 
+  .not-checked {
+    opacity: 0;
+  }
+
   .logo {
     width: 11rem;
     cursor: pointer;

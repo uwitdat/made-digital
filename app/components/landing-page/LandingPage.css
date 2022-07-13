@@ -41,6 +41,7 @@
   }
 
   .Main-content h1 span {
+
     background-color: var(--color-green-light);
     background-image: var(--gradient);
     background-size: 100%;
@@ -63,7 +64,6 @@
 		margin-top: 1em;
     font-family: var(--font-prim);
 		font-size: 1.1rem;
-		font-weight: 700;
 		padding: 1rem 2rem;
     border-radius: 100vh;
 		cursor: pointer;
@@ -102,11 +102,8 @@
   }
 
   .LandingVideo {
-    background-color: var(--color-green-dark);
+    background-color: var(--color-dark);
     height: 100vh;
   }
 
-  .LandingMoreInfo {
-    background-color: rgb(0, 0, 0);
-    height: 100vh;
-  }
+  

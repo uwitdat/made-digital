@@ -9,6 +9,7 @@
   --color-green-light:  rgb(90, 121, 126);
   --color-green-med: rgb(17, 39, 45);
   --color-green-dark: rgb(8, 21, 24);
+  --color-grey:  rgb(174, 174, 174);
   --gradient: linear-gradient(45deg, #3ea277, rgb(112, 182, 235));
 
   --font-prim: 'Rubik', sans-serif;
@@ -17,3 +18,67 @@
   --shadow: 4px 5px 0 black, 5px 6px 0 rgba(255, 255, 255, 0.34)
 }
 
+/* Animations for entrances with intersection observer hook */
+
+
+/*    Fade and swoop from left */
+.push-left {
+  transform: translateX(-10rem);
+  opacity: 0;
+}
+
+.swing-right{
+  animation: swing-right 500ms ease-in forwards;
+}
+
+@keyframes swing-right {
+  from{
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+/* Fade and swoop from right */
+.push-right {
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
+.swing-left{
+  animation: swing-left 500ms ease-in forwards;
+}
+
+@keyframes swing-left {
+  from{
+    transform: translateX(10rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+} 
+
+/* fade in */
+
+.clear {
+  opacity: 0;
+}
+
+.fade-in {
+  animation: fade-in 500ms ease-in forwards;
+}
+
+@keyframes fade-in {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+} 

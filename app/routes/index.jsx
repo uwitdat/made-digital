@@ -1,5 +1,4 @@
-import LandingPage from '../components/LandingPage';
-import { links as primaryLandingLinks } from '../components/LandingPage/LandingPage'
+import { links as primaryLandingLinks, LandingPage } from '../components/landing-page'
 
 export function links() {
   return [

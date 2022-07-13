@@ -8,8 +8,8 @@ import {
 } from "@remix-run/react";
 import styles from './styles/reset.css'
 import globalStyles from './styles/globals.css'
-import Nav from './components/Nav';
-import { links as primaryNavLinks } from './components/Nav/Nav';
+import { Nav, links as primaryNavLinks } from './components/Nav';
+import { Footer, links as footerLinks } from './components/footer';
 
 export const meta = () => ({
   charset: "utf-8",
@@ -19,6 +19,7 @@ export const meta = () => ({
 
 export function links() {
   return [
+    ...footerLinks(),
     ...primaryNavLinks(),
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: globalStyles },
@@ -32,6 +33,7 @@ export default function App() {
     <Document>
       <Nav />
       <Outlet />
+      <Footer />
     </Document>
   );
 }
@@ -43,7 +45,7 @@ const Document = ({ children }) => {
         <Meta />
         <Links />
       </head>
-      <body style={{ position: 'relative', height: 'auto' }}>
+      <body style={{ position: 'relative', height: 'auto', overflowX: 'hidden' }}>
         {children}
         <ScrollRestoration />
         <Scripts />

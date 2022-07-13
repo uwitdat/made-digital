@@ -1,2 +1,2 @@
-import Nav from "./Nav";
-export default Nav;
+import Nav, { links } from "./Nav";
+export { Nav, links };

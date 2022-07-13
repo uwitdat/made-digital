@@ -1,0 +1,66 @@
+  .IncMonthlySales {
+    background-color: var(--color-dark);
+    height: 100vh;
+  }
+
+  .IncMonthlySales-title{
+    padding-top: 2em;
+    padding-left:  10vw;
+    padding-right: 30vw;
+  }
+
+  .IncMonthlySales-title h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+    font-weight: 500;
+    font-family: var(--font-prim);
+    margin-left: 2em;
+    line-height: 1.2;
+  }
+
+  /* .IncMonthlySales-title h1 span {
+    color: rgb(53, 172, 158);
+  } */
+
+  .IncMonthlySales-container {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    padding: 0 10vw;
+    overflow-y: scroll;
+  }
+
+  .IncMonthlySales-container h2{
+    color: white;
+    font-weight: 300;
+    font-family: var(--font-sec);
+    margin-left: 5em;
+    margin-top: 2em;
+  }
+
+  .IncMonthlySales-container div {
+    height: 30rem; width: 20rem;
+    flex-shrink: 0;
+  }
+
+  .IncMonthlySales-container div:nth-child(2){
+    margin-top: 10em;
+  }
+
+  .IncMonthlySales-container div img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .IncMonthlySales-details {
+    color: var(--color-white);
+    padding-right: 30vw;
+    padding-left:  10vw;
+  }
+
+  .IncMonthlySales-details p {
+    font-family: var(--font-sec);
+    font-size: 1.2rem;
+    color: rgb(164, 164, 164);
+  }
+
