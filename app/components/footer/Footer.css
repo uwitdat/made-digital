@@ -2,12 +2,25 @@
   background-color: var(--color-dark);
   text-align: end;
   width: 100%;
-  padding: 1.5em;
+  padding: 1.2em;
   color: var(--color-white);
   font-family: var(--font-prim);
   font-weight: 500;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   
+}
+
+.Footer img {
+  width: 4rem;
+}
+
+.Footer p {
+  font-size: .9rem;
+  transform: translateY(1px);
+  font-weight: 700;
 }
 
 .Footer::after{
@@ -17,5 +30,5 @@
   right: 0;
   background-color: var(--color-white);
   height: 2px;
-  width: 18%;
+  width: 14%;
 }

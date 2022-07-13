@@ -7,7 +7,8 @@ export function links() {
 const Footer = () => {
   return (
     <footer className='Footer'>
-      <p>© {new Date().getFullYear()} Made Digital.</p>
+      <p>© {new Date().getFullYear()}</p>
+      <img src='/assets/made-logo-white.png' />
     </footer>
   )
 }
