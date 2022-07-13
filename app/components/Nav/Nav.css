@@ -1,0 +1,92 @@
+
+  .Nav {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 2em;
+    position: sticky;
+    top:0;
+    width: 100%;
+    transition: all 350ms;
+    z-index: 1;
+  }
+
+  .logo {
+    width: 11rem;
+    cursor: pointer;
+    transition: all 450ms;
+  }
+
+  .logo-scroll {
+    width: 8rem;
+    opacity: .15;
+  }
+
+  .nav-item {
+    font-family: var(--font-prim);
+    display: inline;
+    margin: 0 2em;
+    color: var(--color-white);
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 250ms;
+  }
+
+  .nav-item:hover {
+    background-image: var(--gradient);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+  }
+
+  .active {
+    background-image: var(--gradient);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+  }
+
+  .active::before {
+    content: '';
+    height: 3px;
+    width: 2px;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -9px;
+    animation: expand 350ms ease forwards;
+  }
+
+  @keyframes expand {
+    from{
+      height: 3px;
+    }
+    to{
+      height: 110%;
+    }
+  }
+
+  .navList {
+    opacity: 1;
+    transition: all 350ms;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .shrink {
+    transform: scale(.6);
+    opacity: .15;
+  }
+
+

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap'); /* https://fonts.google.com/specimen/Rubik?query=rubik */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300&display=swap'); /* https://fonts.google.com/specimen/Nunito?query=nunito */
+
+
+:root {
+  --color-dark: rgb(0, 0, 0);
+  --color-white: white;
+  --color-green: #203f3d;
+  --color-green-light:  rgb(90, 121, 126);
+  --color-green-med: rgb(17, 39, 45);
+  --color-green-dark: rgb(8, 21, 24);
+  --gradient: linear-gradient(45deg, #3ea277, rgb(112, 182, 235));
+
+  --font-prim: 'Rubik', sans-serif;
+  --font-sec: 'Nunito', sans-serif;
+
+  --shadow: 4px 5px 0 black, 5px 6px 0 rgba(255, 255, 255, 0.34)
+}
+
