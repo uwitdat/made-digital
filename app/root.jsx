@@ -13,7 +13,7 @@ import { Footer, links as footerLinks } from './components/footer';
 
 export const meta = () => ({
   charset: "utf-8",
-  title: "Made Digital",
+  title: "Made Digital |",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -33,7 +33,7 @@ export default function App() {
     <Document>
       <Nav />
       <Outlet />
-      <Footer />
+      {/*  <Footer /> */}
     </Document>
   );
 }

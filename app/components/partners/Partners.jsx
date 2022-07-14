@@ -5,7 +5,6 @@ import BIG_ICON from '../../../public/icons/bigcommerce-icon.svg'
 import NICE_ICON from '../../../public/icons/NICE_Icon-Color.svg'
 import { FaAlgolia, FaShopify, FaAws, FaAngellist } from 'react-icons/fa';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import { useState, useEffect } from 'react';
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -22,24 +21,13 @@ const Partners = () => {
   const [containerTwo, isImgsVisible] = useIntersectionObserver(options);
   const [containerThree, isPartnersVisible] = useIntersectionObserver(options);
 
-  const [title, setTitle] = useState(false);
-  const [partners, setPartners] = useState(false);
-  const [imgs, setImgs] = useState(false);
-
-  useEffect(() => {
-    if (isTitleVisible) setTitle(true);
-    if (isImgsVisible) setImgs(true);
-    if (isPartnersVisible) setPartners(true);
-
-  }, [isTitleVisible, isImgsVisible, isPartnersVisible])
-
   return (
     <main className='Partners'>
       <section className='Partners-titles'>
-        <div ref={containerTwo} className={imgs ? 'push-right swing-left' : 'push-right'}>
+        <div ref={containerTwo} className={isImgsVisible ? 'push-right swing-left' : 'push-right'}>
           <img src='/assets/group-2.jpg' className='Partners-main-img' />
         </div>
-        <div ref={container} className={title ? 'push-left swing-right' : 'push-left'}>
+        <div ref={container} className={isTitleVisible ? 'push-left swing-right' : 'push-left'}>
           <h1>Partnerships</h1>
           <h3>Helping more of your customers reach checkout doesn't have to be difficult. Using a design thinking approach to better understand your customers needs, and how your target audience views your brand, is paramount to your long term success.</h3>
 
@@ -47,7 +35,7 @@ const Partners = () => {
         </div>
       </section>
 
-      <div ref={containerThree} className={partners ? 'icons clear fade-in' : 'icons clear'}>
+      <div ref={containerThree} className={isPartnersVisible ? 'icons clear fade-in' : 'icons clear'}>
         <img src={BIG_ICON} />
         <img src={NICE_ICON} />
         <FaAlgolia />

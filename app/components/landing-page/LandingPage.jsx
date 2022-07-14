@@ -3,7 +3,6 @@ import { Link } from '@remix-run/react';
 import BG from '../../../public/assets/vg-7.jpg';
 import { IncMonthlySales, links as monthlySalesLinks } from '../inc-monthly-sales';
 import { Partners, links as partnerLinks } from '../partners';
-import { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 export function links() {
@@ -24,14 +23,8 @@ const LandingPage = () => {
 
   const [container, isRefVisible] = useIntersectionObserver(options);
 
-  const [vis, setVis] = useState(false);
-
-  useEffect(() => {
-    if (isRefVisible) setVis(true);
-  }, [isRefVisible])
-
   return (
-    <div ref={container} className={vis ? "Landing clear fade-in" : "Landing clear"}>
+    <div ref={container} className={isRefVisible ? "Landing clear fade-in" : "Landing clear"}>
       <main className="Main">
         <img src={BG} alt='digital background' className='Main-bg-img' />
         <section className='Main-content'>
