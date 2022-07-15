@@ -37,7 +37,7 @@ const LandingPage = () => {
           <h1>Made <span> Digital</span></h1>
           <h5>A leading eCommerce agency that specializes in website strategy and development services.</h5>
           <Link to='#landing-video'>
-            <button>Show me more</button>
+            <button>Learn More</button>
           </Link>
         </section>
       </main>

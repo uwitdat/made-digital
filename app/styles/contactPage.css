@@ -1,5 +1,7 @@
 
 .Contact {
-  height:100vh;
+  height: 80vh;
   background-color: var(--color-dark);
+  display: grid;
+  place-items: center;
 }
