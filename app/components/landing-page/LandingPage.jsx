@@ -3,10 +3,12 @@ import { Link } from '@remix-run/react';
 import BG from '../../../public/assets/vg-7.jpg';
 import { IncMonthlySales, links as monthlySalesLinks } from '../inc-monthly-sales';
 import { Partners, links as partnerLinks } from '../partners';
+import { Testimonials, links as testimonialLinks } from '../testimonials';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 export function links() {
   return [
+    ...testimonialLinks(),
     ...partnerLinks(),
     ...monthlySalesLinks(),
     { rel: "stylesheet", href: styles }
@@ -39,6 +41,7 @@ const LandingPage = () => {
       <section className='LandingVideo' id='landing-video' />
       <IncMonthlySales />
       <Partners />
+      <Testimonials />
     </div>
   )
 }

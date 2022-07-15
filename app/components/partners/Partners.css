@@ -90,6 +90,12 @@
   font-size: 1.3rem;
 }
 
+.Partners div:nth-child(2) > *:nth-child(2){
+  /* border: 2px solid red; */
+  margin: 1em 0;
+}
+
+
 
 .carousel {
   display: flex;
@@ -97,6 +103,11 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
   width: 70%;
+  -ms-overflow-style: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
 }
 
 .icons {
@@ -119,7 +130,6 @@
 
 .meet-partners {
   margin-top: 2em;
-  cursor: pointer;
   transition: all ease 350ms;
   width: max-content;
   position: relative;

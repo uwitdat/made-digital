@@ -1,7 +1,7 @@
 import styles from './Partners.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import React, { useState, createRef, useRef, useEffect } from 'react';
-import { IconsTabOne, IconsTabTwo } from '../icons-tab/IconsTabs';
+import { IconsTabOne, IconsTabTwo } from '../icons-tab';
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -40,22 +40,18 @@ const Partners = () => {
     }
   }
 
-  // const TIMER = 3000;
-
-  // useEffect(() => {
-
-  //   const interval = setInterval(() => {
-  //     scroll();
-  //   }, TIMER);
-  //   return () => clearInterval(interval);
-  //   // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-  // }, [])
+  // const TIMER = 4000;
 
   useEffect(() => {
     if (clicks === 0) {
       setGoingUp(!goingUp);
       setClicks(numOfClicks);
     }
+
+    // const interval = setInterval(() => {
+    //   scroll();
+    // }, TIMER);
+    // return () => clearInterval(interval);
   }, [clicks])
 
   return (
@@ -66,17 +62,11 @@ const Partners = () => {
         </div>
         <div ref={container} className={isTitleVisible ? 'push-left swing-right' : 'push-left'}>
           <h1>Partnerships</h1>
+          <p>We’ve partnered with some of the biggest players in the eCommerce space.</p>
           <h3>Helping more of your customers reach checkout doesn't have to be difficult. Using a design thinking approach to better understand your customers needs, and how your target audience views your brand, is paramount to your long term success.</h3>
-
-          {goingUp ? (
-            <p className='meet-partners pulse' onClick={scroll}>
-              Meet our partners →
-            </p>
-          ) : (
-            <p className='meet-partners pulse' onClick={scroll}>
-              ← Meet our partners
-            </p>
-          )}
+          <p className='meet-partners pulse'>
+            Meet our partners &darr;
+          </p>
         </div>
       </section>
 
