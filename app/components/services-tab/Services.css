@@ -41,7 +41,7 @@
 
 .service-titles span {
   margin-left: 1em;
-  font-size: 4.5rem;
+  font-size: 4rem;
   filter: brightness(0) saturate(100%) invert(100%) sepia(39%) saturate(2237%) hue-rotate(169deg) brightness(124%) contrast(111%);
 }
 
@@ -74,7 +74,6 @@
 .service-container p {
   font-family: var(--font-sec);
   font-weight: 300;
-  /* color: var(--color-grey); */
   margin-bottom: 1em;
   font-size: 1.3rem;
 }

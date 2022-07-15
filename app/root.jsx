@@ -33,7 +33,6 @@ export default function App() {
     <Document>
       <Nav />
       <Outlet />
-      {/*  <Footer /> */}
     </Document>
   );
 }

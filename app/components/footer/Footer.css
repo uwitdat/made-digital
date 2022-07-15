@@ -1,12 +1,13 @@
 .Footer {
-  background-color: var(--color-dark);
+  background-color: transparent;
   text-align: end;
   width: 100%;
-  padding: 1.2em;
+  padding: 1.4em;
   color: var(--color-white);
   font-family: var(--font-prim);
   font-weight: 500;
-  position: relative;
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -30,5 +31,5 @@
   right: 0;
   background-color: var(--color-white);
   height: 2px;
-  width: 14%;
+  width: 12%;
 }

@@ -1,8 +1,15 @@
 import React from 'react'
+import styles from '../styles/contactPage.css';
 
+export function links() {
+  return [
+    { rel: "stylesheet", href: styles },
+  ];
+}
 const Contact = () => {
   return (
-    <div style={{ background: 'black', height: '106vh', marginTop: '-8rem' }}>Contact</div>
+    <div className='Contact'>
+    </div>
   )
 }
 

@@ -44,19 +44,29 @@ const Nav = () => {
 
   return (
     <nav className={isHeightChecked ? "Nav" : "Nav not-checked"}>
-      <Link to='/'>
-        <img
-          className={isScrolling ? 'logo shrink' : 'logo'}
-          src={MADE_LOGO_WHITE} alt='Made Digital Logo' />
-      </Link>
 
-      <ul className={isScrolling ? 'navList hide' : 'navList'}>
-        {navTabs.map((tab, idx) => (
-          <Link to={`/${tab.toLowerCase()}`} key={idx}>
-            <li className={currentTab === tab.toLowerCase() ? 'nav-item active' : 'nav-item'}>{tab}</li>
-          </Link>
-        ))}
-      </ul>
+      <div className={isScrolling ? 'nav-top-panel hide' : 'nav-top-panel'}>
+        <Link to='/referrals'>
+          <p id={currentTab === 'referrals' ? 'underline' : ''}>Refer - 5% rev share</p>
+          <p />
+        </Link>
+      </div>
+
+      <div className='nav-bottom-panel'>
+        <Link to='/'>
+          <img
+            className={isScrolling ? 'logo shrink' : 'logo'}
+            src={MADE_LOGO_WHITE} alt='Made Digital Logo' />
+        </Link>
+
+        <ul className={isScrolling ? 'navList hide' : 'navList'}>
+          {navTabs.map((tab, idx) => (
+            <Link to={`/${tab.toLowerCase()}`} key={idx}>
+              <li className={currentTab === tab.toLowerCase() ? 'nav-item active' : 'nav-item'}>{tab}</li>
+            </Link>
+          ))}
+        </ul>
+      </div>
     </nav>
   )
 }

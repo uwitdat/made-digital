@@ -2,14 +2,57 @@
   .Nav {
     background-color: transparent;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding-right: 2em;
     position: sticky;
-    top:0;
+    top: 0;
     width: 100%;
     transition: all 350ms;
     z-index: 1;
+  }
+
+  .nav-top-panel {
+    padding-top: 2em;
+    padding-right: 2em;
+    color: var(--color-white);
+    font-family: var(--font-prim);
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .nav-top-panel a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .nav-top-panel a p {
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 250ms;
+  }
+
+  #underline {
+    border-bottom: 1px solid var(--color-white);
+  }
+
+  .nav-top-panel a p:hover {
+    border-bottom: 1px solid var(--color-white);
+  }
+
+  .nav-top-panel a p:last-child {
+    background-color: var(--color-green-light);
+    height: 10px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-left: 1em;
+  }
+
+  .nav-bottom-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -.5em;
   }
 
   .not-checked {
@@ -86,6 +129,7 @@
 
   .hide {
     opacity: 0;
+    pointer-events: none;
   }
 
   .shrink {

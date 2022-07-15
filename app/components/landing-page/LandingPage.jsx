@@ -5,10 +5,12 @@ import { IncMonthlySales, links as monthlySalesLinks } from '../inc-monthly-sale
 import { Partners, links as partnerLinks } from '../partners';
 import { Testimonials, links as testimonialLinks } from '../testimonials';
 import { Services, links as servicesLinks } from '../services-tab';
+import { Cta, links as ctaLinks } from '../cta';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 export function links() {
   return [
+    ...ctaLinks(),
     ...servicesLinks(),
     ...testimonialLinks(),
     ...partnerLinks(),
@@ -45,6 +47,7 @@ const LandingPage = () => {
       <Partners />
       <Testimonials />
       <Services />
+      <Cta />
     </div>
   )
 }
