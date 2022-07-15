@@ -9,7 +9,7 @@ export function links() {
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
-  const [fade, setFade] = useState(false)
+  const [fade, setFade] = useState(false);
 
   const handleChangePanel = () => {
     setFade(true);

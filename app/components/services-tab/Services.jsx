@@ -12,10 +12,20 @@ export function links() {
 
 const Services = () => {
 
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(0);
+  const [fade, setFade] = useState(false);
 
-  const handleBack = () => setCurrent(current - 1);
-  const handleForwards = () => setCurrent(current + 1);
+  const handleBack = () => {
+    setFade(true);
+    setTimeout(() => { setCurrent(current - 1) }, 290);
+    setTimeout(() => { setFade(false) }, 292);
+  }
+
+  const handleForwards = () => {
+    setFade(true);
+    setTimeout(() => { setCurrent(current + 1) }, 290);
+    setTimeout(() => { setFade(false) }, 292);
+  };
 
   const options = {
     root: null,
@@ -29,7 +39,7 @@ const Services = () => {
     <div ref={container} className={isVisible ? 'Services clear fade-in' : 'Services clear'}>
       <h1>How We Help</h1>
       <section className='service'>
-        <div className='service-container'>
+        <div className={fade ? 'service-container out' : 'service-container in'}>
           <div className='service-titles'>
             <h2>{services[current].title}</h2>
             <span>{services[current].icon}</span>
