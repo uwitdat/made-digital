@@ -27,7 +27,7 @@
 
 .testimonial blockquote {
   font-family: var(--font-prim);
-  font-size: 2rem;
+  font-size: 1.9rem;
   line-height: 1.3;
   position: relative;
 }
@@ -83,6 +83,8 @@
   font-size: 1.1rem;
   box-shadow: var(--shadow);
   transition: all 350ms ease;
+
+  margin-right: 3em;
 }
 
 .testimonial-view-more:hover {
@@ -91,11 +93,11 @@
 }
 
 .slide-out {
-  animation-name: slide-out-left, slide-in-left;
-  animation-duration: 550ms, 600ms;
-  animation-delay: 0ms, 550ms; /* add this */
-  animation-timing-function: both, both;
-  animation-iteration-count: 1, 1;
+  animation-name: shove, slide-out-left, slide-in-left;
+  animation-duration: 400ms, 550ms, 600ms;
+  animation-delay: 0ms, 400ms, 550ms; /* add this */
+  animation-timing-function: ease, both, both;
+  animation-iteration-count: 1, 1, 1;
   }
 
 /* ----------------------------------------------
@@ -110,6 +112,17 @@
  * animation slide-out-left
  * ----------------------------------------
  */
+
+@keyframes shove {
+  0%{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+}
 
 @keyframes slide-out-left {
   0% {

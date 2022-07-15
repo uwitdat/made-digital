@@ -1,0 +1,99 @@
+.Services {
+  height: 100vh;
+  background-color: var(--color-dark);
+  text-align: center;
+  padding: 1em;
+}
+
+.Services h1 {
+  font-family: var(--font-prim);
+  color: var(--color-white);
+  font-size: 3.5rem;
+  margin-top: .5em;
+}
+
+.service {
+  color: var(--color-white);
+  margin-top: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid green; */
+  height: 50%;
+}
+
+.service-container {
+  padding: 2em;
+  max-width: 50%;
+  min-height: max-content;
+  text-align: start;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.service-titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.service-titles span {
+  margin-left: 1em;
+  font-size: 4.5rem;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(39%) saturate(2237%) hue-rotate(169deg) brightness(124%) contrast(111%);
+}
+
+.service-titles h2 {
+  font-family: var(--font-prim);
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 2.3rem;
+  background-image: var(--gradient);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  position: relative;
+}
+
+.service div div h2::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: -13px;
+  width: 3px;
+  background-color: var(--color-white);
+}
+
+
+.service-container p {
+  font-family: var(--font-sec);
+  font-weight: 300;
+  /* color: var(--color-grey); */
+  margin-bottom: 1em;
+  font-size: 1.3rem;
+}
+
+.service-btns button {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.515);
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  transition: all 350ms;
+  margin-top: 1em;
+}
+
+.service-btns button:hover:enabled{
+  color: var(--color-white);
+}
+
+.service-btns button:disabled {
+  cursor: default;
+  opacity: .2;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Testimonials.css';
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver'
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
+import { testimonials } from './data';
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -13,11 +14,11 @@ const Testimonials = () => {
   const handleChangePanel = () => {
     setFade(true);
     if (current === testimonials.length - 1) {
-      setTimeout(() => { setCurrent(0) }, 550)
+      setTimeout(() => { setCurrent(0) }, 650)
     } else {
-      setTimeout(() => { setCurrent(current + 1) }, 550)
+      setTimeout(() => { setCurrent(current + 1) }, 650)
     }
-    setTimeout(() => { setFade(false) }, 1100)
+    setTimeout(() => { setFade(false) }, 1200)
   }
 
   const options = {
@@ -55,23 +56,7 @@ const Testimonials = () => {
   )
 }
 
-const testimonials = [
-  {
-    quote: "With Made's help, our business managed to increase our average monthly revenue by 20% in just three months!",
-    from: "— Oli F,",
-    site: "YesWeVibe",
-  },
-  {
-    quote: "Made Digital helped us point out seemingly small changes that made a huge difference in the way that customers interacted with our site. Their advice was instrumental in helping us turn more visitors into customers!",
-    from: "- Lauren M,",
-    site: "Plant Collective",
-  },
-  {
-    quote: "Made Digital is headed by experts in the space. They're an invaluable resource for anyone looking to take their business to the next level.",
-    from: "- Megan M,",
-    site: "Folklor",
-  },
-]
+
 
 export default Testimonials
 

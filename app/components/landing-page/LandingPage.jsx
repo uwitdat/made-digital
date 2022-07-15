@@ -4,10 +4,12 @@ import BG from '../../../public/assets/vg-7.jpg';
 import { IncMonthlySales, links as monthlySalesLinks } from '../inc-monthly-sales';
 import { Partners, links as partnerLinks } from '../partners';
 import { Testimonials, links as testimonialLinks } from '../testimonials';
+import { Services, links as servicesLinks } from '../services-tab';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 export function links() {
   return [
+    ...servicesLinks(),
     ...testimonialLinks(),
     ...partnerLinks(),
     ...monthlySalesLinks(),
@@ -42,6 +44,7 @@ const LandingPage = () => {
       <IncMonthlySales />
       <Partners />
       <Testimonials />
+      <Services />
     </div>
   )
 }
