@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './Services.css';
-import { services } from './data';
-import { IoChevronForwardCircleOutline, IoChevronBackCircleOutline } from 'react-icons/io5';
+import { services, titles } from './data';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 export function links() {
@@ -13,19 +12,16 @@ export function links() {
 const Services = () => {
 
   const [current, setCurrent] = useState(0);
+  const [currentTitle, setCurrentTitle] = useState(titles[0].ref)
   const [fade, setFade] = useState(false);
 
-  const handleBack = () => {
+  const handleChangePanel = (ref) => {
+    if (current === ref) return;
+    setCurrentTitle(ref);
     setFade(true);
-    setTimeout(() => { setCurrent(current - 1) }, 290);
+    setTimeout(() => { setCurrent(ref) }, 290);
     setTimeout(() => { setFade(false) }, 292);
   }
-
-  const handleForwards = () => {
-    setFade(true);
-    setTimeout(() => { setCurrent(current + 1) }, 290);
-    setTimeout(() => { setFade(false) }, 292);
-  };
 
   const options = {
     root: null,
@@ -36,28 +32,38 @@ const Services = () => {
   const [container, isVisible] = useIntersectionObserver(options);
 
   return (
-    <div ref={container} className={isVisible ? 'Services clear fade-in' : 'Services clear'}>
-      <h1>How We Help</h1>
-      <section className='service'>
-        <div className={fade ? 'service-container out' : 'service-container in'}>
-          <div className='service-titles'>
-            <h2>{services[current].title}</h2>
-            <span>{services[current].icon}</span>
-          </div>
-          <p>{services[current].des}</p>
-        </div>
-      </section>
-      <div className='service-btns'>
-        <button disabled={current === 0} onClick={handleBack}>
-          <IoChevronBackCircleOutline />
-        </button>
-        <button disabled={current === services.length - 1} onClick={handleForwards}>
-          <IoChevronForwardCircleOutline />
-        </button>
+    <div ref={container} className={isVisible ? 'Services clear fade-in' : 'Services clear'} id='services'>
 
+      <h1>How We Help</h1>
+      <div className='services-container'>
+        <div className='services-nav-col'>
+          <ul className='services-nav'>
+            {titles.map(({ title, ref, icon }, idx) => (
+              <li onClick={() => handleChangePanel(ref)} id={currentTitle === ref ? 'service-active' : ''} key={idx}>{title}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className='services-content-col'>
+
+          <section className='service'>
+            <div className={fade ? 'service-container out' : 'service-container in'}>
+              <div className='service-titles'>
+                <h2>{services[current].title}</h2>
+                <span>{services[current].icon}</span>
+              </div>
+              <p>{services[current].des}</p>
+            </div>
+          </section>
+
+        </div>
       </div>
     </div>
   )
 }
 
+
+
+
 export default Services
+

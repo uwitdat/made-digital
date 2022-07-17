@@ -28,3 +28,31 @@ export const services = [
         icon: <GiDatabase />
     }
 ]
+
+export const titles = [
+    {
+        title: 'Customer Retention',
+        ref: 0,
+        icon: <GiChart />
+    },
+    {
+        title: 'Design & Development',
+        ref: 1,
+        icon: <FaConnectdevelop />
+    },
+    {
+        title: 'Replatforming',
+        ref: 2,
+        icon: <GiPlatform />
+    },
+    {
+        title: 'Site Performance',
+        ref: 3,
+        icon: <GiBeamWake />
+    },
+    {
+        title: 'Data Migration',
+        ref: 4,
+        icon: <GiDatabase />
+    },
+]

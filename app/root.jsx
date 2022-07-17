@@ -9,7 +9,7 @@ import {
 import styles from './styles/reset.css'
 import globalStyles from './styles/globals.css'
 import { Nav, links as primaryNavLinks } from './components/Nav';
-import { Footer, links as footerLinks } from './components/footer';
+import { links as footerLinks } from './components/footer';
 
 export const meta = () => ({
   charset: "utf-8",
@@ -23,7 +23,7 @@ export function links() {
     ...primaryNavLinks(),
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: globalStyles },
-    { rel: "icon", href: "", type: "image/png" },
+    { rel: "icon", href: "#", type: "image/png" },
   ];
 }
 

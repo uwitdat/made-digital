@@ -32,7 +32,7 @@ const Testimonials = () => {
   const [imgContainer, isImgVisible] = useIntersectionObserver(options);
 
   return (
-    <section className='Testimonials'>
+    <section className='Testimonials' id='testimonials'>
       <div ref={container} className={isVisible ? 'clear fade-in' : 'clear'}>
         <h1 className='testimonials-title'>Testimonials</h1>
         <div className={fade ? 'testimonial slide-out' : 'testimonial'}>

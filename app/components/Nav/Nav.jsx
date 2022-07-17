@@ -9,8 +9,6 @@ export function links() {
 }
 
 const Nav = () => {
-  const navTabs = ['Services', 'Testimonials', 'About', 'Contact'];
-
   const location = useLocation();
   const currentTab = location.pathname.substring(1).toLowerCase();
 
@@ -60,11 +58,18 @@ const Nav = () => {
         </Link>
 
         <ul className={isScrolling ? 'navList hide' : 'navList'}>
-          {navTabs.map((tab, idx) => (
-            <Link to={`/${tab.toLowerCase()}`} key={idx}>
-              <li className={currentTab === tab.toLowerCase() ? 'nav-item active' : 'nav-item'}>{tab}</li>
-            </Link>
-          ))}
+          <Link to={`#services`}>
+            <li className={currentTab === "services" ? 'nav-item active' : 'nav-item'}>Services</li>
+          </Link>
+          <Link to={`#testimonials`}>
+            <li className={currentTab === 'testimonials' ? 'nav-item active' : 'nav-item'}>Testimonials</li>
+          </Link>
+          <Link to={`/about`}>
+            <li className={currentTab === 'about' ? 'nav-item active' : 'nav-item'}>About</li>
+          </Link>
+          <Link to={`/contact`}>
+            <li className={currentTab === 'contact' ? 'nav-item active' : 'nav-item'}>Contact</li>
+          </Link>
         </ul>
       </div>
     </nav>
