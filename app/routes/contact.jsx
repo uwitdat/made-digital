@@ -23,7 +23,7 @@ const Contact = () => {
   const data = useLoaderData();
   return (
     <div className='Contact'>
-      <Widget id={data.ENV.TYPEFORM_ID} style={{ width: '60%', height: '70%' }} className="my-form" />
+       <Widget id={data.ENV.TYPEFORM_ID} style={{ width: '60%', height: '70%' }} className="my-form" /> 
     </div>
   )
 }
