@@ -10,15 +10,15 @@ export function links() {
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
-  const page = url.searchParams.get('to');
+  const scrollTo = url.searchParams.get('to');
 
-  const data = { page };
+  const data = { scrollTo };
 
   return data;
 };
 
 export default function Index() {
-  const { page } = useLoaderData();
+  const { scrollTo } = useLoaderData();
 
-  return <LandingPage page={page} />;
+  return <LandingPage scrollTo={scrollTo} />;
 }

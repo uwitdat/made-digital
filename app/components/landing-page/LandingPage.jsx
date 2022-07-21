@@ -24,7 +24,7 @@ export function links() {
   ];
 }
 
-const LandingPage = ({ page }) => {
+const LandingPage = ({ scrollTo }) => {
   const options = {
     root: null,
     rootMargin: '10px',
@@ -32,14 +32,14 @@ const LandingPage = ({ page }) => {
   };
 
   useEffect(() => {
-    if (page) {
-      scroller.scrollTo(`${page}`, {
+    if (scrollTo) {
+      scroller.scrollTo(`${scrollTo}`, {
         duration: 200,
-        delay: 650,
+        delay: 550,
         smooth: 'easeInOutQuart',
       });
     }
-  }, [page]);
+  }, [scrollTo]);
 
   const [container, isRefVisible] = useIntersectionObserver(options);
 
@@ -63,8 +63,8 @@ const LandingPage = ({ page }) => {
           </Link>
         </section>
       </main>
-
       <section className="LandingVideo" id="landing-video" />
+
       <IncMonthlySales />
       <Partners />
       <Testimonials />
