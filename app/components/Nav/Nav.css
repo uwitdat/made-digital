@@ -53,6 +53,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: -.5em;
+    position: relative;
   }
 
   .not-checked {
@@ -127,6 +128,7 @@
     transition: all 350ms;
   }
 
+
   .hide {
     opacity: 0;
     pointer-events: none;
@@ -136,5 +138,4 @@
     transform: scale(.6);
     opacity: .15;
   }
-
 

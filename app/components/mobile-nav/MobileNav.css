@@ -1,0 +1,55 @@
+.MobileNav{
+  color: var(--color-white);
+  position: absolute;
+  left: 0;
+  top: .5em;
+  width: 104%;
+  height:100vh;
+  padding-top: 6em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  background-color: rgba(0, 0, 0, 0.748);
+  transform: translateX(100%);
+  animation: right-in 450ms ease forwards;
+}
+
+
+@keyframes right-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0)
+    
+  }
+}
+
+.MobileNav a li {
+  font-family: var(--font-prim);
+  font-size: 2rem;
+  margin-block: .3em;
+  margin-right: 1.5em;
+  opacity: 0;
+  animation: in 550ms ease forwards 450ms;
+}
+
+.MobileNav a li:hover {
+  background-image: var(--gradient);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.hamburger{
+  color: var(--color-white);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 350ms;
+  position: relative;
+  z-index: 900;
+}

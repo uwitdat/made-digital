@@ -3,9 +3,14 @@ import MADE_LOGO_WHITE from '../../../public/assets//made-logo-white.png';
 import styles from './Nav.css';
 import { useLocation } from '@remix-run/react';
 import { Link } from '@remix-run/react';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import { MobileNav, links as mobileNavLinks } from '../mobile-nav';
 
 export function links() {
-  return [{ rel: 'stylesheet', href: styles }];
+  return [
+    ...mobileNavLinks(),
+    { rel: 'stylesheet', href: styles }
+  ];
 }
 
 const Nav = () => {
@@ -14,6 +19,7 @@ const Nav = () => {
 
   const [isScrolling, setIsScrolling] = useState(null);
   const [isHeightChecked, setIsHeightChecked] = useState(false);
+  const isMobile = useMediaQuery('(max-width: 1000px)');
 
   useEffect(() => {
     const checkPosition = () => {
@@ -62,44 +68,49 @@ const Nav = () => {
           />
         </Link>
 
-        <ul className={isScrolling ? 'navList hide' : 'navList'}>
-          <Link to={`/?to=services`}>
-            <li
-              className={
-                currentTab === 'services' ? 'nav-item active' : 'nav-item'
-              }
-            >
-              Services
-            </li>
-          </Link>
-          <Link to={`/?to=testimonials`}>
-            <li
-              className={
-                currentTab === 'testimonials' ? 'nav-item active' : 'nav-item'
-              }
-            >
-              Testimonials
-            </li>
-          </Link>
-          <Link to={`/about`}>
-            <li
-              className={
-                currentTab === 'about' ? 'nav-item active' : 'nav-item'
-              }
-            >
-              About
-            </li>
-          </Link>
-          <Link to={`/contact`}>
-            <li
-              className={
-                currentTab === 'contact' ? 'nav-item active' : 'nav-item'
-              }
-            >
-              Contact
-            </li>
-          </Link>
-        </ul>
+        {isMobile ? ( // TODO: move below content to <StaticNav/> component
+          <MobileNav />
+        ) : (
+          <ul className={isScrolling ? 'navList hide' : 'navList'}>
+            <Link to={`/?to=services`}>
+              <li
+                className={
+                  currentTab === 'services' ? 'nav-item active' : 'nav-item'
+                }
+              >
+                Services
+              </li>
+            </Link>
+            <Link to={`/?to=testimonials`}>
+              <li
+                className={
+                  currentTab === 'testimonials' ? 'nav-item active' : 'nav-item'
+                }
+              >
+                Testimonials
+              </li>
+            </Link>
+            <Link to={`/about`}>
+              <li
+                className={
+                  currentTab === 'about' ? 'nav-item active' : 'nav-item'
+                }
+              >
+                About
+              </li>
+            </Link>
+            <Link to={`/contact`}>
+              <li
+                className={
+                  currentTab === 'contact' ? 'nav-item active' : 'nav-item'
+                }
+              >
+                Contact
+              </li>
+            </Link>
+          </ul>
+        )}
+
       </div>
     </nav>
   );
