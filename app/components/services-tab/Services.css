@@ -222,15 +222,11 @@
   .service-one {
     margin-block: 2em;
     cursor: pointer;
-    opacity: .3;
+    opacity: 1;
     transition: all 350ms;
   }
 
 
-  .service-active {
-    opacity: 1;
-    transform: scale(1.01);
-  }
 }
 
 @media only screen and (max-width: 1000px) {

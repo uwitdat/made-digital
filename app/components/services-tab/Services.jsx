@@ -35,16 +35,6 @@ const Services = () => {
 
   const [container, isVisible] = useIntersectionObserver(options);
 
-  const [active, setActive] = useState(0);
-
-  const handleSetActive = (idx) => {
-    if (active === idx) {
-      return;
-    } else {
-      setActive(idx);
-    }
-  };
-
   return (
     <div
       ref={container}
@@ -86,15 +76,7 @@ const Services = () => {
                 </>
               ) : (
                 services.map((service, idx) => (
-                  <div
-                    onClick={() => handleSetActive(idx)}
-                    className={
-                      idx == active
-                        ? 'service-one service-active'
-                        : 'service-one'
-                    }
-                    key={idx}
-                  >
+                  <div className={'service-one'} key={idx}>
                     <div className="service-titles">
                       <h2>{service.title}</h2>
                       <span>{service.icon}</span>
