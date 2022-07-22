@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import styles from './MobileNav.css';
 import { CgMenuMotion } from 'react-icons/cg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from '@remix-run/react';
 
 export function links() {
-  return [
-    { rel: 'stylesheet', href: styles },
-  ];
+  return [{ rel: 'stylesheet', href: styles }];
 }
 
-const MobileNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const MobileNav = ({ isOpen, handleCloseMenu, handleOpenMenu }) => {
   const [isScrolling, setIsScrolling] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "scroll"
+      document.body.style.overflow = 'scroll';
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   const handleScroll = () => {
     const position = window.pageYOffset > 70;
@@ -36,17 +33,18 @@ const MobileNav = () => {
     };
   }, []);
 
-  const handleCloseMenu = () => setIsOpen(false);
-
   return (
     <nav>
       {isOpen ? (
-        <AiOutlineClose className='hamburger' onClick={() => setIsOpen(false)} />
+        <AiOutlineClose className="hamburger" onClick={handleCloseMenu} />
       ) : (
-        <CgMenuMotion className={isScrolling ? 'hamburger hide' : 'hamburger'} onClick={() => setIsOpen(true)} />
+        <CgMenuMotion
+          className={isScrolling ? 'hamburger hide' : 'hamburger'}
+          // onClick={handleOpenMenu}
+        />
       )}
-      {isOpen ? (
-        <ul className='MobileNav'>
+      {/*  {isOpen ? (
+        <ul className="MobileNav">
           <Link to={`/?to=services`}>
             <li onClick={handleCloseMenu}>Services</li>
           </Link>
@@ -60,9 +58,9 @@ const MobileNav = () => {
             <li onClick={handleCloseMenu}>Contact</li>
           </Link>
         </ul>
-      ) : null}
+    ) : null} */}
     </nav>
-  )
-}
+  );
+};
 
-export default MobileNav
+export default MobileNav;

@@ -7,10 +7,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 import { MobileNav, links as mobileNavLinks } from '../mobile-nav';
 
 export function links() {
-  return [
-    ...mobileNavLinks(),
-    { rel: 'stylesheet', href: styles }
-  ];
+  return [...mobileNavLinks(), { rel: 'stylesheet', href: styles }];
 }
 
 const Nav = () => {
@@ -20,6 +17,10 @@ const Nav = () => {
   const [isScrolling, setIsScrolling] = useState(null);
   const [isHeightChecked, setIsHeightChecked] = useState(false);
   const isMobile = useMediaQuery('(max-width: 1000px)');
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleCloseMenu = () => setIsOpen(false);
+  const handleOpenMenu = () => setIsOpen(true);
 
   useEffect(() => {
     const checkPosition = () => {
@@ -52,7 +53,10 @@ const Nav = () => {
     <nav className={isHeightChecked ? 'Nav' : 'Nav not-checked'}>
       <div className={isScrolling ? 'nav-top-panel hide' : 'nav-top-panel'}>
         <Link to="/referrals">
-          <p id={currentTab === 'referrals' ? 'underline' : ''}>
+          <p
+            onClick={handleCloseMenu}
+            id={currentTab === 'referrals' ? 'underline' : ''}
+          >
             Refer - 5% rev share
           </p>
           <p />
@@ -69,7 +73,11 @@ const Nav = () => {
         </Link>
 
         {isMobile ? ( // TODO: move below content to <StaticNav/> component
-          <MobileNav />
+          <MobileNav
+            isOpen={isOpen}
+            handleCloseMenu={handleCloseMenu}
+            handleOpenMenu={handleOpenMenu}
+          />
         ) : (
           <ul className={isScrolling ? 'navList hide' : 'navList'}>
             <Link to={`/?to=services`}>
@@ -110,7 +118,6 @@ const Nav = () => {
             </Link>
           </ul>
         )}
-
       </div>
     </nav>
   );

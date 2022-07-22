@@ -3,14 +3,14 @@
   position: absolute;
   left: 0;
   top: .5em;
-  width: 104%;
+  width: 107%;
   height:100vh;
   padding-top: 6em;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  background-color: rgba(0, 0, 0, 0.748);
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.871);
   transform: translateX(100%);
   animation: right-in 450ms ease forwards;
 }
@@ -19,10 +19,23 @@
 @keyframes right-in {
   from {
     transform: translateX(100%);
+    opacity: 0;
   }
   to {
-    transform: translateX(0)
+    transform: translateX(0);
+    opacity: 1;
     
+  }
+}
+
+@keyframes right-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
@@ -30,10 +43,13 @@
   font-family: var(--font-prim);
   font-size: 2rem;
   margin-block: .3em;
-  margin-right: 1.5em;
+  margin-right: 2em;
   opacity: 0;
-  animation: in 550ms ease forwards 450ms;
+  animation: in 1s ease forwards 450ms;
+  user-select: none;
+
 }
+
 
 .MobileNav a li:hover {
   background-image: var(--gradient);
