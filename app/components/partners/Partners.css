@@ -115,8 +115,6 @@
   justify-content: space-evenly; 
   align-items: center;
   /* gap: 3em; */
-
-  border-top: 1px solid rgba(75, 75, 75, 0.182);
   position: relative;
   padding-top: 4em;
   padding-bottom: 5em;
@@ -144,4 +142,78 @@
   height: 4px;
   width: 150%;
   background-color: var(--color-white);
+}
+
+
+@media only screen and (max-width: 1005px) {
+  .Partners {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .icons svg,   
+  .icons img {
+    height: 3rem;
+  }
+
+  .icons {
+    padding-bottom: 0;
+  }
+
+}
+
+
+@media only screen and (max-width: 890px) {
+  .Partners-main-img{
+    width: 20rem;
+    height: 25rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .Partners-main-img{
+    width: 15rem;
+    height: 20rem;
+    margin-top: auto;
+  }
+
+  .Partners-titles div h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel {
+    width: 100%;
+  }
+
+}
+
+
+@media only screen and (max-width: 720px) {
+  .Partners-titles div h1{
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Partners-titles div:first-child{
+    display: none;
+  }
+
+  .Partners-titles div:last-child{
+    width: 100%;
+    padding-inline: 2em;
+  }
+
+  .icons svg,
+  .icons img {
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .icons svg,
+  .icons img {
+    height: 2rem;
+  }
 }

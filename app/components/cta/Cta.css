@@ -107,3 +107,21 @@
 .Cta button:hover::after {
   transform: translate(0, 0);
 }
+
+@media only screen and (max-width: 750px) {
+  .Cta div h1 {
+    font-size: 6vw;
+  }  
+  .Cta button {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .Cta div p {
+    font-size: 1.4rem;
+  }  
+  .Cta button {
+    font-size: .9rem;
+  }
+}
