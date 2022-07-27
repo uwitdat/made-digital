@@ -40,10 +40,10 @@ const MobileNav = ({ isOpen, handleCloseMenu, handleOpenMenu }) => {
       ) : (
         <CgMenuMotion
           className={isScrolling ? 'hamburger hide' : 'hamburger'}
-          // onClick={handleOpenMenu}
+          onClick={handleOpenMenu}
         />
       )}
-      {/*  {isOpen ? (
+      {isOpen ? (
         <ul className="MobileNav">
           <Link to={`/?to=services`}>
             <li onClick={handleCloseMenu}>Services</li>
@@ -58,7 +58,7 @@ const MobileNav = ({ isOpen, handleCloseMenu, handleOpenMenu }) => {
             <li onClick={handleCloseMenu}>Contact</li>
           </Link>
         </ul>
-    ) : null} */}
+      ) : null}
     </nav>
   );
 };

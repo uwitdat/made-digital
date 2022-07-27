@@ -26,10 +26,11 @@ const Nav = () => {
     const checkPosition = () => {
       if (typeof window !== 'undefined') {
         const position = window.pageYOffset > 70;
-        return position;
+        setIsScrolling(position);
       }
     };
-    setIsScrolling(checkPosition());
+    checkPosition();
+
     setTimeout(() => {
       setIsHeightChecked(true);
     }, 500);
