@@ -18,6 +18,7 @@ export async function loader() {
 
 const Contact = () => {
   const data = useLoaderData();
+  console.log(data);
   return (
     <div className="Contact">
       <Widget
