@@ -11,7 +11,7 @@ import React, { useState } from 'react';
 import globalStyles from './styles/globals.css';
 import { Nav, links as primaryNavLinks } from './components/Nav';
 import { links as footerLinks } from './components/footer';
-import Auth from './components/auth/Auth';
+import { Auth, links as authLinks } from './components/auth';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
 
@@ -25,6 +25,7 @@ export function links() {
   return [
     ...footerLinks(),
     ...primaryNavLinks(),
+    ...authLinks(),
     { rel: 'stylesheet', href: styles },
     { rel: 'stylesheet', href: globalStyles },
     { rel: 'icon', href: '#', type: 'image/png' },

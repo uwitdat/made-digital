@@ -1,0 +1,60 @@
+.Auth-container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.Auth {
+  border: 1px solid rgb(52, 52, 52);
+  width: 20vw;
+  min-width: 20rem;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.11)
+}
+
+.Auth h2 {
+  color: var(--color-white);
+  font-size: 2rem;
+  font-family: var(--font-prim);
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+
+.Auth input {
+  width: 100%;
+  padding: .6em;
+  border: none;
+}
+
+.Auth button {
+  margin-top: 1em;
+  width: 100%;
+  padding: .6em;
+  font-family: var(--font-prim);
+  color: white;
+  background-color: black;
+  border: 1px solid rgba(128, 128, 128, 0.349);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.Auth input::placeholder {
+  font-family: var(--font-sec);
+}
+
+.Auth-err {
+  color: red;
+  margin-top: 1em;
+  font-family: var(--font-sec);
+  font-weight: 300;
+  font-style: italic;
+}
+
+.err-hide {
+  user-select: none;
+  color: transparent;
+}
