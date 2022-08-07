@@ -28,9 +28,10 @@
   font-family: var(--font-prim);
   font-size: 3.3rem;
   color: var(--color-white);
-  width: 20ch;
+  max-width: 20ch;
   line-height: 1.1;
   position: relative;
+  margin: 0 1em;
 }
 
 .Cta div h1::after {
@@ -110,7 +111,7 @@
 
 @media only screen and (max-width: 750px) {
   .Cta div h1 {
-    font-size: 6vw;
+    font-size: 2.5rem;
   }  
   .Cta button {
     font-size: 1rem;
@@ -124,4 +125,16 @@
   .Cta button {
     font-size: .9rem;
   }
+}
+
+@media only screen and (max-width: 460px) {
+  .Cta div h1 {
+    font-size: 2.1rem;
+  } 
+}
+
+@media only screen and (max-width: 395px) {
+  .Cta div h1 {
+    font-size: 1.9rem;
+  } 
 }

@@ -3,7 +3,7 @@
   position: absolute;
   left: 0;
   top: .5em;
-  width: 107%;
+  width: 100vw;
   height:100vh;
   padding-top: 6em;
   display: flex;
@@ -43,11 +43,11 @@
   font-family: var(--font-prim);
   font-size: 2rem;
   margin-block: .3em;
-  margin-right: 2em;
-  opacity: 0;
-  animation: in 1s ease forwards 450ms;
-  user-select: none;
+  margin-right: 1.2em;
 
+  user-select: none;
+  /* opacity: 0;
+  animation: in 1s ease forwards 450ms; */
 }
 
 

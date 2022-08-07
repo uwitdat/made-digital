@@ -2,6 +2,20 @@
   .Landing {
     margin-top: -5.5rem;
     height: auto;
+    overflow: hidden;
+  }
+
+
+  .LandingVideo {
+    display: grid;
+    place-items: center;
+    padding-inline: 2em;
+  }
+
+  .tolstoy {
+    width: 50rem;
+    height: 40rem;
+    max-width: 100%;
   }
 
   .Main{    
@@ -60,6 +74,7 @@
     color: var(--color-white);
   }
 
+
 	.Main-content button {
 		margin-top: 1em;
     font-family: var(--font-prim);
@@ -111,10 +126,53 @@
       padding-inline: 10em;
     }
   }
+  
+  @media only screen and (max-width: 997px) {
+    .Main-content {
+      padding-inline: 10em;
+    }
+
+  }
+
+  @media only screen and (max-width:750px) {
+    .Main-content {
+      padding-inline: 10em;
+    }
+
+    .Main-content button {
+      margin-top: 2em;
+    }
+  }
 
   @media only screen and (max-width: 750px) {
     .Main-content {
       padding-inline: 4vw;
       text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .Main-content h5 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media only screen and (max-width: 458px) {
+    .Main-content h1{
+      font-size: 3.8rem;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .Main-content h1{
+      font-size: 3.5rem;
+    }
+
+    .Main-content h5 {
+      font-size: 1.3rem;
+    }
+
+    .Main-content button {
+      font-size: 1rem;
     }
   }

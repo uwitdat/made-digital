@@ -4,6 +4,7 @@
   color: var(--color-white);
   padding: 2em;
   display: flex;
+  overflow: hidden;
 }
 
 .Testimonials > div:first-child,

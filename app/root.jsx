@@ -41,17 +41,17 @@ export async function loader() {
 }
 
 export default function App() {
-  const [authed, setAuthed] = useState(false);
+  const [authed, setAuthed] = useState(process.env.NODE_ENV === 'development' ? true : false);
   const data = useLoaderData();
   const password = data.ENV.PASSWORD;
 
   return (
     <Document>
       {authed ? (
-        <>
+        <React.Fragment>
           <Nav />
           <Outlet />
-        </>
+        </React.Fragment>
       ) : (
         <Auth setAuthed={setAuthed} password={password} />
       )}

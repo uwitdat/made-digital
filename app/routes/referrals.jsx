@@ -23,7 +23,7 @@ const Referrals = () => {
   const options = {
     root: null,
     rootMargin: '10px',
-    threshold: 0.5,
+    threshold: 0,
   };
 
   const [container, isVisible] = useIntersectionObserver(options);

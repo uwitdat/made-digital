@@ -3,6 +3,8 @@ import styles from './MobileNav.css';
 import { CgMenuMotion } from 'react-icons/cg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from '@remix-run/react';
+import disableScroll from 'disable-scroll';
+
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -13,9 +15,9 @@ const MobileNav = ({ isOpen, handleCloseMenu, handleOpenMenu }) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      disableScroll.on();
     } else {
-      document.body.style.overflow = 'scroll';
+      disableScroll.off();
     }
   }, [isOpen]);
 
@@ -45,6 +47,7 @@ const MobileNav = ({ isOpen, handleCloseMenu, handleOpenMenu }) => {
       )}
       {isOpen ? (
         <ul className="MobileNav">
+
           <Link to={`/?to=services`}>
             <li onClick={handleCloseMenu}>Services</li>
           </Link>

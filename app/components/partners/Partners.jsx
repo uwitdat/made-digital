@@ -58,13 +58,13 @@ const Partners = () => {
     <main className='Partners'>
       <section className='Partners-titles'>
         <div ref={containerTwo} className={isImgsVisible ? 'push-right swing-left' : 'push-right'}>
-          <img src='/assets/group-2.jpg' className='Partners-main-img' />
+          <img src='/assets/pex1.jpg' className='Partners-main-img' />
         </div>
-        <div ref={container} className={isTitleVisible ? 'push-left swing-right' : 'push-left'}>
+        <div style={{ paddingTop: '8em' }} ref={container} className={isTitleVisible ? 'push-left swing-right' : 'push-left'}>
           <h1>Partnerships</h1>
           <p>We’ve partnered with some of the biggest players in the eCommerce space.</p>
-          <h3>Helping more of your customers reach checkout doesn't have to be difficult. Using a design thinking approach to better understand your customers needs, and how your target audience views your brand, is paramount to your long term success.</h3>
-          <p className='meet-partners pulse'>
+          <h3>We specialize in quite a few things, but we can’t do it all. Thankfully, we’ve partnered with some of the best technologies and services in the eCommerce space to bring you the most value.  You’ll be able to tap into our premium partner network and unlock the powerful tools, resources, and support you need to drive your business to new heights.</h3>
+          <p className='meet-partners pulse' style={{ visibility: 'hidden' }}>
             Meet our partners &darr;
           </p>
         </div>

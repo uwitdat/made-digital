@@ -5,11 +5,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* overflow: hidden; */
 }
 
 .referrals-container {
   height: auto;
-  padding: 2em;
+  width: 100%;
+  padding-block: 2em;
+  padding-inline: .5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 
 }
@@ -35,7 +41,6 @@
 .referrals-container h1::before{
   content: '';
   position: absolute;
-  
   bottom: 0;
   left: 1.5em;
   width: 17rem;
@@ -48,10 +53,8 @@
   display: flex;
   flex-direction: column;
   width: 40rem;
-  max-width: 40rem;
+  max-width: 100%;
   text-align: start;
-  display: flex;
-  flex-direction: column;
 }
 
 .referrals-container form label {
@@ -127,4 +130,31 @@
 
 .referrals-container form button:hover {
   background-color: var(--color-green);
+}
+
+@media only screen and (max-width: 520px) {
+  .referrals-container h1 {
+    font-size: 2.5rem;
+  }
+  .referrals-container form label {
+    font-size: 1.2rem;
+  }
+
+  .referrals-container form button {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .referrals-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .referrals-container h1::before {
+    display: none;
+  }
+
+  .referrals-container form label {
+    font-size: 1rem;
+  }
 }

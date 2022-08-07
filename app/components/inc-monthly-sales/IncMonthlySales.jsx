@@ -24,10 +24,10 @@ const IncMonthlySales = () => {
       </div>
       <div ref={containerTwo} className={isImgsVisible ? 'IncMonthlySales-container push-left swing-right' : 'IncMonthlySales-container push-left'}>
         <div>
-          <img src='/assets/group-1.jpg' />
+          <img src='/assets/pex2.jpg' alt='person in office' />
         </div>
         <div>
-          <img src='/assets/group-11.jpg' />
+          <img src='/assets/group-11.jpg' alt='people collaborating in office' />
         </div>
         <h2
           className={isTextVisible ? 'push-right swing-left' : 'push-right'}

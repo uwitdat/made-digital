@@ -63,7 +63,11 @@ const LandingPage = ({ scrollTo }) => {
           </Link>
         </section>
       </main>
-      <section className="LandingVideo" id="landing-video" />
+      <section className="LandingVideo" id="landing-video">
+        <iframe className='tolstoy' id="tolstoy" src="https://player.gotolstoy.com/62n0hdjcjb8fn?host"
+          scrolling="no" frameborder="0" allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;">
+        </iframe>
+      </section>
 
       <IncMonthlySales />
       <Partners />
