@@ -7,7 +7,7 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import styles from './styles/reset.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import globalStyles from './styles/globals.css';
 import { Nav, links as primaryNavLinks } from './components/Nav';
 import { links as footerLinks } from './components/footer';
@@ -44,6 +44,12 @@ export default function App() {
   const [authed, setAuthed] = useState(process.env.NODE_ENV === 'development' ? true : false);
   const data = useLoaderData();
   const password = data.ENV.PASSWORD;
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+
 
   return (
     <Document>

@@ -42,6 +42,8 @@ const LandingPage = ({ scrollTo }) => {
   }, [scrollTo]);
 
   const [container, isRefVisible] = useIntersectionObserver(options);
+  const [containerTwo, isRefVisibleTwo] = useIntersectionObserver(options);
+  const [containerThree, isRefVisibleThree] = useIntersectionObserver(options);
 
   return (
     <div
@@ -64,8 +66,13 @@ const LandingPage = ({ scrollTo }) => {
         </section>
       </main>
       <section className="LandingVideo" id="landing-video">
-        <iframe className='tolstoy' id="tolstoy" src="https://player.gotolstoy.com/62n0hdjcjb8fn?host"
-          scrolling="no" frameborder="0" allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;">
+        <div className={isRefVisibleTwo ? "LandingVideo-content push-left swing-right" : "LandingVideo-content push-left"} ref={containerTwo}>
+          <h2>Meet Ademola</h2>
+          <p>One of the co-founders of Made Digital.</p>
+        </div>
+
+        <iframe ref={containerThree} className={isRefVisibleThree ? 'tolstoy fade-in' : 'tolstoy clear'} id="tolstoy" src="https://player.gotolstoy.com/62n0hdjcjb8fn?host"
+          scrolling="no" frameBorder="0" allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;">
         </iframe>
       </section>
 

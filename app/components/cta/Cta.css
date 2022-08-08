@@ -1,6 +1,7 @@
 .Cta {
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.858);
+  background-color: rgba(0, 0, 0, 0.881);
+  background: linear-gradient(to bottom, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.576));
   position: relative;
   text-align: center;
 }

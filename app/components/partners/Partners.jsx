@@ -14,8 +14,14 @@ const Partners = () => {
     threshold: 0.5
   }
 
+  const optionsImg = {
+    root: null,
+    rootMargin: '10px',
+    threshold: 0
+  }
+
   const [container, isTitleVisible] = useIntersectionObserver(options);
-  const [containerTwo, isImgsVisible] = useIntersectionObserver(options);
+  const [containerTwo, isImgsVisible] = useIntersectionObserver(optionsImg);
   const [containerThree, isPartnersVisible] = useIntersectionObserver(options);
   const [current, setCurrent] = useState(0);
 
@@ -58,7 +64,7 @@ const Partners = () => {
     <main className='Partners'>
       <section className='Partners-titles'>
         <div ref={containerTwo} className={isImgsVisible ? 'push-right swing-left' : 'push-right'}>
-          <img src='/assets/pex1.jpg' className='Partners-main-img' />
+          <img src='/assets/pex1.jpg' className='Partners-main-img' alt='partners' />
         </div>
         <div style={{ paddingTop: '8em' }} ref={container} className={isTitleVisible ? 'push-left swing-right' : 'push-left'}>
           <h1>Partnerships</h1>

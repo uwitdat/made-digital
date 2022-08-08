@@ -12,10 +12,94 @@
     padding-inline: 2em;
   }
 
+  .LandingVideo-content h2 {
+    color: var(--color-white);
+    font-family: var(--font-prim);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    position: relative;
+  }
+
+  .LandingVideo-content h2::before{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: -1em;
+    width: 18rem;
+    background-color: var(--color-white);
+    height: 4px;
+  }
+
+  .LandingVideo-content p {
+    color: var(--color-grey);
+    font-family: var(--font-sec);
+    font-size: 1.3rem;
+    margin-top: .3em;
+    margin-left: 8em;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .LandingVideo-content p{
+      margin-left: 6em;
+    }
+  }
+
+  @media only screen and (max-width: 560px) {
+    .LandingVideo-content p{
+      margin-left: 4em;
+    }
+  }
+
+  @media only screen and (max-width: 518px) {
+    .LandingVideo-content p{
+      margin-left: 2em;
+    }
+  }
+
+  @media only screen and (max-width: 474px) {
+    .LandingVideo-content{
+      text-align: center;
+    }
+
+    .LandingVideo-content p{
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    .LandingVideo-content h2{
+      font-size: 3.2rem;
+    }
+  }
+
+  @media only screen and (max-width: 422px) {
+    .LandingVideo-content h2{
+      font-size: 3rem;
+    }
+
+    .LandingVideo-content h2::before{ 
+      width: 14rem;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .LandingVideo-content h2{
+      font-size: 2.7rem;
+    }
+  }
+
+  
+
+
+
+
+
   .tolstoy {
     width: 50rem;
-    height: 40rem;
+    height: 30rem;
     max-width: 100%;
+    border-radius: 25px;
+    box-shadow: var(--shadow);   
   }
 
   .Main{    

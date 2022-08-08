@@ -139,10 +139,14 @@
     font-size: 2.5rem;
   }
   .ContactForm form label {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .ContactForm form button {
+    font-size: 1rem;
+  }
+
+  .ContactForm form input::placeholder{
     font-size: 1rem;
   }
 }
@@ -164,6 +168,6 @@
   }
 
   .ContactForm form label {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

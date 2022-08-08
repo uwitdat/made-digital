@@ -137,10 +137,14 @@
     font-size: 2.5rem;
   }
   .referrals-container form label {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .referrals-container form button {
+    font-size: 1rem;
+  }
+
+  .referrals-container form input::placeholder{
     font-size: 1rem;
   }
 }
@@ -155,6 +159,6 @@
   }
 
   .referrals-container form label {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

@@ -19,7 +19,7 @@ const About = () => {
 
   return (
     <div className="About">
-      <section ref={containerTwo} className={isVisibleTwo ? 'fade-in' : 'clear'}>
+      <section ref={containerTwo} className={isVisibleTwo ? 'fade-in' : 'clear'} style={{ position: 'relative' }}>
         <h2>Who We Are</h2>
         <div className='margin-sm' />
         <p>
@@ -45,10 +45,9 @@ const About = () => {
           -fixes and band- aid solutions. And most importantly, we always get
           results.
         </p>
-        <div className='margin-xl' />
       </section>
 
-
+      <div className='margin-xl' />
 
       <section ref={container} className={isVisible ? 'swing-right' : 'push-left'}>
         <h2 className='title-trunc'> <span>Made Digital's</span> Services Are For</h2>
@@ -68,6 +67,14 @@ const About = () => {
           </li>
         </ul>
       </section>
+
+      <div className='About-img-bg'>
+        <div className='About-img-bg-content'>
+          <div />
+          <img src='/assets/abt-2.jpg' alt='man in office' />
+
+        </div>
+      </div>
     </div>
   );
 };

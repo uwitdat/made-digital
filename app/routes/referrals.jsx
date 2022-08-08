@@ -49,14 +49,14 @@ const Referrals = () => {
           Tell Us <span>About You</span>
         </h1>
         <Form method="post" onChange={handleChange}>
-          <Input type={'firstName'} label={'First Name'} />
-          <Input type={'lastName'} label={'Last Name'} />
-          <Input type={'businessEmail'} label={'Business Email'} />
-          <Input type={'businessWebsite'} label={'Business Website'} />
-          <Input type={'annualRevenue'} label={'Annual Revenue'} />
-          <Input type={'eCommercePlatform'} label={'E-Commerce Platform'} />
-          <Input type={'country'} label={'Country'} />
-          <Input type={'referral'} label={'What company/party referred you?'} />
+          <Input type={'firstName'} label={'First Name'} ph='First Name' />
+          <Input type={'lastName'} label={'Last Name'} ph='Last Name' />
+          <Input type={'businessEmail'} label={'Business Email'} ph={'Business Email'} />
+          <Input type={'businessWebsite'} label={'Business Website'} ph={'Business Website'} />
+          <Input type={'annualRevenue'} label={'Annual Revenue'} ph={'Annual Revenue'} />
+          <Input type={'eCommercePlatform'} label={'E-Commerce Platform'} ph={'E-Commerce Platform'} />
+          <Input type={'country'} label={'Country'} ph={'Country'} />
+          <Input type={'referral'} label={'What company/party referred you?'} ph={'What company/party referred you?'} />
           <button type="submit">Submit</button>
         </Form>
       </div>
