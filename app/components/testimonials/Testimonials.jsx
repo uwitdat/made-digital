@@ -7,6 +7,7 @@ export function links() {
   return [{ rel: "stylesheet", href: styles }];
 }
 
+
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const [fade, setFade] = useState(false);
@@ -39,7 +40,12 @@ const Testimonials = () => {
           <blockquote>
             {testimonials[current].quote}
           </blockquote>
-          <p>{testimonials[current].from}<span> {testimonials[current].site}</span></p>
+          <p>{testimonials[current].from}
+            <a href={testimonials[current].url} noopener='true' noferrer='true' target="_blank">
+              <span>{testimonials[current].site}</span>
+            </a>
+
+          </p>
         </div>
         <button
           ref={btnContainer}
@@ -50,7 +56,7 @@ const Testimonials = () => {
         </button>
       </div>
       <div ref={imgContainer} className={isImgVisible ? 'clear fade-in' : 'clear'}>
-        <img src='/assets/test-2.jpg' />
+        <img src='/assets/abt-4.jpg' alt='Happy man with tablet' />
       </div>
     </section>
   )

@@ -14,11 +14,14 @@ import { links as footerLinks } from './components/footer';
 import { Auth, links as authLinks } from './components/auth';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
+import { data } from './SEO';
 
 export const meta = () => ({
   charset: 'utf-8',
-  title: 'Made Digital |',
+  title: 'Made Digital',
   viewport: 'width=device-width,initial-scale=1',
+  description: 'A leading eCommerce agency that specializes in website strategy and development services.',
+  keywords: data
 });
 
 export function links() {
@@ -28,7 +31,7 @@ export function links() {
     ...authLinks(),
     { rel: 'stylesheet', href: styles },
     { rel: 'stylesheet', href: globalStyles },
-    { rel: 'icon', href: '#', type: 'image/png' },
+    { rel: 'icon', href: 'favicon.ico', type: 'image/png' },
   ];
 }
 
@@ -45,9 +48,9 @@ export default function App() {
   const data = useLoaderData();
   const password = data.ENV.PASSWORD;
 
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
 
 
 

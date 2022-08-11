@@ -88,11 +88,6 @@
     }
   }
 
-  
-
-
-
-
 
   .tolstoy {
     width: 50rem;
@@ -138,17 +133,19 @@
     line-height: 1;
   }
 
-  .Main-content h1 span {
+  /*.Main-content h1 span {
 
-    background-color: var(--color-green-light);
-    background-image: var(--gradient);
+    background-color: var(--gradient);
+    -webkit-text-stroke: 1px #f8f8f896;
+      text-shadow: 0px 1px 1px var(--gradient);
+
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
-  }
+  } */
 
   .Main-content h5 {
     font-size: 1.7rem;
@@ -167,7 +164,8 @@
     border-radius: 100vh;
 		cursor: pointer;
     border-color: transparent;
-    background-color: var(--color-green-med);
+    background-color: transparent;
+    border: 2px solid var(--color-white);
     color: var(--color-white);
 		transition: all ease 300ms;
 		position: relative;

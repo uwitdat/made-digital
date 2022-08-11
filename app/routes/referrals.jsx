@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import styles from '../styles/referralsPage.css';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { useTransition } from '@remix-run/react';
-import { useSubmit } from '@remix-run/react';
-import { Form } from '@remix-run/react';
 import Input from '../components/input-w-label/input';
+import emailjs from '@emailjs/browser';
+import { data } from '../SEO';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
 
-export async function action({ request }) {
-  const formData = await request.formData();
-
-  console.log(formData);
-  return null;
-}
+export const meta = () => ({
+  charset: 'utf-8',
+  title: 'Refer A Client',
+  viewport: 'width=device-width,initial-scale=1',
+  description: 'A leading eCommerce agency that specializes in website strategy and development services.',
+  keywords: data
+});
 
 const Referrals = () => {
-  const submit = useSubmit();
 
   const options = {
     root: null,
@@ -27,13 +26,38 @@ const Referrals = () => {
   };
 
   const [container, isVisible] = useIntersectionObserver(options);
+  const [success, setSuccess] = useState(false)
+  const [fade, setFade] = useState(false)
 
-  function handleChange(event) {
-    const { state, type, submission, location } = useTransition();
+  const form = useRef();
 
-    console.log(state, type, submission, location);
-    submit(event.currentTarget, { replace: true });
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_lgeapfc', 'template_xwl5bk6', form.current, 'tx_aPr5F2gj0cIdKQ')
+      .then((result) => {
+        if (result.text === 'OK') {
+          handleSuccess()
+        }
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
+  const handleSuccess = () => {
+    setSuccess(true)
+
+    setTimeout(() => {
+
+      setFade(true)
+    }, 3000)
+
+    setTimeout(() => {
+      setFade(false)
+      setSuccess(false)
+    }, 4000)
   }
+
 
   return (
     <div className="Referrals">
@@ -46,9 +70,10 @@ const Referrals = () => {
         }
       >
         <h1>
-          Tell Us <span>About You</span>
+          Refer a <span>Merchant</span> to us
         </h1>
-        <Form method="post" onChange={handleChange}>
+        <p>Know any merchants that need our services? Introduce us and enjoy the rewards of our Partner Referral Program.</p>
+        <form ref={form} onSubmit={sendEmail}>
           <Input type={'firstName'} label={'First Name'} ph='First Name' />
           <Input type={'lastName'} label={'Last Name'} ph='Last Name' />
           <Input type={'businessEmail'} label={'Business Email'} ph={'Business Email'} />
@@ -57,9 +82,14 @@ const Referrals = () => {
           <Input type={'eCommercePlatform'} label={'E-Commerce Platform'} ph={'E-Commerce Platform'} />
           <Input type={'country'} label={'Country'} ph={'Country'} />
           <Input type={'referral'} label={'What company/party referred you?'} ph={'What company/party referred you?'} />
-          <button type="submit">Submit</button>
-        </Form>
+          <button disabled={success} type="submit">Submit</button>
+        </form>
       </div>
+      {success && (
+        <div className={fade ? 'success-modal exit-modal' : 'success-modal'}>
+          <p>We'll be in touch! 🎉</p>
+        </div>
+      )}
     </div>
   );
 };

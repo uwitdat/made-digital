@@ -67,13 +67,13 @@ const Services = () => {
               }
             >
               {!isMobile ? (
-                <>
+                <React.Fragment>
                   <div className="service-titles">
                     <h2>{services[current].title}</h2>
                     <span>{services[current].icon}</span>
                   </div>
                   <p>{services[current].des}</p>
-                </>
+                </React.Fragment>
               ) : (
                 services.map((service, idx) => (
                   <div className={'service-one'} key={idx}>

@@ -1,6 +1,7 @@
 import styles from './LandingPage.css';
 import { Link } from '@remix-run/react';
-import BG from '../../../public/assets/vg-7.jpg';
+// import BG from '../../../public/assets/vg-7.jpg';
+import BG from '../../../public/assets/bg.jpg';
 import {
   IncMonthlySales,
   links as monthlySalesLinks,
@@ -51,7 +52,7 @@ const LandingPage = ({ scrollTo }) => {
       className={isRefVisible ? 'Landing clear fade-in' : 'Landing clear'}
     >
       <main className="Main">
-        <img src={BG} alt="digital background" className="Main-bg-img" />
+        <img src={BG} alt="Made Digital background" className="Main-bg-img" />
         <section className="Main-content">
           <h1>
             Made <span> Digital</span>

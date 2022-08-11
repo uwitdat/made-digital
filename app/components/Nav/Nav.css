@@ -47,7 +47,7 @@
   }
 
   .nav-top-panel a p:last-child {
-    background-color: var(--color-green-light);
+    background-color: rgb(198, 226, 255);
     height: 10px;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -86,26 +86,27 @@
     cursor: pointer;
     position: relative;
     transition: all 250ms;
+    font-weight: 500;
   }
 
-  .nav-item:hover {
-    background-image: var(--gradient);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    background-color: var(--color-white);
+    transform: scale(0);
+    transition: transform 350ms ease;
+  }
+
+  .nav-item:hover::after {
+    transform: scale(1);
   }
 
   .active {
-    background-image: var(--gradient);
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
+    color: var(--color-white);
   }
 
   .active::before {

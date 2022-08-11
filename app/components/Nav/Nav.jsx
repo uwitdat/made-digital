@@ -58,7 +58,7 @@ const Nav = () => {
             onClick={handleCloseMenu}
             id={currentTab === 'referrals' ? 'underline' : ''}
           >
-            Refer - 5% rev share
+            Refer A Client
           </p>
           <p />
         </Link>

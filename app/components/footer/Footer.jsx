@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className='Footer'>
       <p>© {new Date().getFullYear()}</p>
-      <img src='/assets/made-logo-white.png' />
+      <img src='/assets/made-logo-white.png' alt='Made Digital logo' />
     </footer>
   )
 }

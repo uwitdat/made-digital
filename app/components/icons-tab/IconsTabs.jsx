@@ -8,9 +8,9 @@ import { FaAlgolia, FaShopify, FaAngellist } from 'react-icons/fa';
 export const IconsTabOne = () => {
   return (
     <React.Fragment>
-      <img src={BIG_ICON} />
-      <img src={NICE_ICON} />
-      <img src={GORGIAS_ICON} style={{ height: '2rem' }} />
+      <img src={BIG_ICON} alt={BIG_ICON} />
+      <img src={NICE_ICON} alt={NICE_ICON} />
+      <img src={GORGIAS_ICON} style={{ height: '2rem' }} alt={GORGIAS_ICON} />
       <FaAlgolia />
     </React.Fragment>
   )
@@ -22,8 +22,8 @@ export const IconsTabTwo = () => {
       <FaShopify />
 
       <FaAngellist />
-      <img src={NICE_ICON} />
-      <img src={ENQ_LOGO} />
+      <img src={NICE_ICON} alt={NICE_ICON} />
+      <img src={ENQ_LOGO} alt={ENQ_LOGO} />
     </React.Fragment>
   )
 }

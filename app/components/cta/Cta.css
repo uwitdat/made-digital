@@ -1,7 +1,6 @@
 .Cta {
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.881);
-  background: linear-gradient(to bottom, rgb(0, 0, 0) 5%, rgba(0, 0, 0, 0.576));
+  background-color: var(--color-dark);
   position: relative;
   text-align: center;
 }
@@ -45,16 +44,6 @@
   background-color: var(--color-white);
 }
 
-.Cta div h1 span {
-  background-color: var(--color-green-light);
-  background-image: var(--gradient);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
 
 .Cta div p {
   font-family: var(--font-sec);

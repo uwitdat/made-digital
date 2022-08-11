@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: flex-end;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.894);
+  background-color: rgba(7, 7, 7, 0.894);
   transform: translateX(100%);
   animation: right-in 450ms ease forwards;
 }
@@ -44,21 +44,14 @@
   font-size: 2rem;
   margin-block: .3em;
   margin-right: 1.2em;
-
+  font-weight: 500;
   user-select: none;
   /* opacity: 0;
   animation: in 1s ease forwards 450ms; */
 }
 
-
 .MobileNav a li:hover {
-  background-image: var(--gradient);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
+  text-decoration: underline;
 }
 
 .hamburger{

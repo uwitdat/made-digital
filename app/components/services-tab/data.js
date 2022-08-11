@@ -8,8 +8,8 @@ export const services = [
         icon: <GiChart />
     },
     {
-        title: 'Design & Development',
-        des: "If it's code you need, we can do it all. Whether you need custom tweak, feature, migration. site speed upgrade, or an entire theme developed, we've got you covered.",
+        title: 'Website Design & Development',
+        des: "If it’s code you need, we can do it all. Whether you need custom tweak, feature, migration. site speed upgrade, or an entire website designed & developed, we’ve got you covered.",
         icon: <FaConnectdevelop />
     },
     {
@@ -36,7 +36,7 @@ export const titles = [
         icon: <GiChart />
     },
     {
-        title: 'Design & Development',
+        title: 'Website Design & Development',
         ref: 1,
         icon: <FaConnectdevelop />
     },

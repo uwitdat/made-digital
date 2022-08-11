@@ -2,6 +2,7 @@ import styles from './Partners.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import React, { useState, createRef, useRef, useEffect } from 'react';
 import { IconsTabOne, IconsTabTwo } from '../icons-tab';
+import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -25,7 +26,7 @@ const Partners = () => {
   const [containerThree, isPartnersVisible] = useIntersectionObserver(options);
   const [current, setCurrent] = useState(0);
 
-  const icons = [<IconsTabOne />, <IconsTabTwo />, <IconsTabOne />, <IconsTabTwo />,]
+  const icons = [<IconsTabOne />, <IconsTabTwo />]
 
   const elementsRef = useRef(icons.map(() => createRef()));
 
@@ -48,17 +49,17 @@ const Partners = () => {
 
   // const TIMER = 4000;
 
-  useEffect(() => {
-    if (clicks === 0) {
-      setGoingUp(!goingUp);
-      setClicks(numOfClicks);
-    }
+  // useEffect(() => {
+  //   if (clicks === 0) {
+  //     setGoingUp(!goingUp);
+  //     setClicks(numOfClicks);
+  //   }
 
-    // const interval = setInterval(() => {
-    //   scroll();
-    // }, TIMER);
-    // return () => clearInterval(interval);
-  }, [clicks])
+  //   // const interval = setInterval(() => {
+  //   //   scroll();
+  //   // }, TIMER);
+  //   // return () => clearInterval(interval);
+  // }, [clicks])
 
   return (
     <main className='Partners'>
@@ -77,9 +78,13 @@ const Partners = () => {
       </section>
 
       <div ref={containerThree} className={isPartnersVisible ? 'clear fade-in carousel' : 'clear carousel'}>
+
         {icons.map((collection, idx) => (
-          <div ref={elementsRef.current[idx]} className='icons' key={idx}>{collection}</div>
+          <div ref={elementsRef.current[idx]} className='icons' key={idx}>
+            {collection}
+          </div>
         ))}
+
       </div>
     </main>
   )

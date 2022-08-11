@@ -1,3 +1,24 @@
+.About-container {
+  margin-top: -5.5rem;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.701);
+}
+
+.About-img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.About-img-bg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .About{
   background-color: var(--color-black);
   min-height: 100vh;
@@ -11,9 +32,10 @@
 
   display: flex;
   flex-direction: column;
-  position: relative;
   overflow: hidden;
+  padding-top: 10em;
 }
+
 
 .About h2 {
   font-family: var(--font-prim);
@@ -44,7 +66,6 @@
 }
 
 .About-services li {
-  list-style: circle;
   font-family: var(--font-sec);
   font-size: 1.2rem;
   margin-block: 1em;
@@ -56,25 +77,6 @@
   line-height: 1.1;
 }
 
-.title-trunc span {
-  background-image: var(--gradient);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
-
-
-.About-img-bg {
-  position: absolute;
-  top: 2em;
-  right: -13vw;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-}
 
 .About-img-bg-content {
   position: relative;

@@ -105,10 +105,28 @@
   scroll-behavior: smooth;
   width: 70%;
   -ms-overflow-style: none;
+  position: relative;
 }
 
 .carousel::-webkit-scrollbar {
   display: none;
+}
+
+
+.left:hover, 
+.right:hover{
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.left {
+  left: 1em;
+  transition: all 350ms;
+}
+
+.right  {
+  right: .5em;
+  transition: all 350ms;
 }
 
 .icons {
@@ -119,6 +137,7 @@
   position: relative;
   padding-top: 4em;
   padding-bottom: 5em;
+  position: relative;
   /* padding-left: 2em; */
   /* width: 70%; */
 

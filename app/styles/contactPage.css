@@ -1,12 +1,67 @@
 
 .Contact {
   background-color: var(--color-dark);
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  /* overflow: hidden; */
 }
 
+.success-modal {
+  box-shadow: var(--shadow);
+  width: auto;
+  padding: .5em 1.5em;
+  height: auto;
+  position: sticky;
+  bottom: 1em;
+  border-radius: 10px;
+  background-color: rgb(225, 225, 225);
+
+  opacity: 0;
+  animation: enter 350ms forwards ease;
+
+}
+
+.exit-modal {
+  animation: exit 350ms forwards;
+}
+
+@keyframes enter {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(-3vh);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes exit {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.success-modal p {
+  color: var(--color-black);
+  font-family: var(--font-prim);
+  font-size: 1.4rem;
+  font-weight: 700;
+
+}
 
 .ContactForm {
   height: auto;
@@ -29,15 +84,6 @@
   line-height: 1.1;
 }
 
-.ContactForm h1 span {
-  background-image: var(--gradient);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-text-fill-color: transparent;
-}
 
 .ContactForm h1::before{
   content: '';
@@ -131,6 +177,11 @@
 
 .ContactForm form button:hover {
   background-color: var(--color-green);
+}
+
+.ContactForm form button:disabled {
+  cursor: not-allowed;
+  opacity: .3;
 }
 
 @media only screen and (max-width: 520px) {
