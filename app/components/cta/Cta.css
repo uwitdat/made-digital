@@ -59,6 +59,7 @@
   color: var(--color-white);
   font-family: var(--font-prim);
   font-size: 1.2rem;
+  font-weight: 500;
   padding: 1.2rem 3rem;
   border-radius: 100vh;
   cursor: pointer;

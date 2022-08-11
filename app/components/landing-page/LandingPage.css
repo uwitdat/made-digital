@@ -161,6 +161,7 @@
     font-family: var(--font-prim);
 		font-size: 1.1rem;
 		padding: 1rem 2rem;
+    font-weight: 500;
     border-radius: 100vh;
 		cursor: pointer;
     border-color: transparent;
@@ -177,10 +178,10 @@
 	}
 
 	.Main-content button::after{
-		content: ' →';
+		content: ' ›';
 		position: absolute;
 		font-size: 1.5rem;
-		right: 11px;
+		right: 20px;
 		transform: translateY(-3px);
 		opacity: 0;
 	} 
