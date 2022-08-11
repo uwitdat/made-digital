@@ -47,7 +47,7 @@
   }
 
   .nav-top-panel a p:last-child {
-    background-color: rgb(198, 226, 255);
+    background-color: var(--color-blue);
     height: 10px;
     aspect-ratio: 1;
     border-radius: 50%;

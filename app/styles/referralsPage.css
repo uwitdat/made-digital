@@ -188,7 +188,7 @@
 .referrals-container form div::after {
   content: '';
   position: absolute;
-  background: var(--gradient);
+  background: var(--color-blue);
   left: 0;
   bottom: 15px;
   height: 4px;
