@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { data } from '../SEO';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
+import { animateScroll as scroll } from 'react-scroll'
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -54,6 +55,10 @@ const Referrals = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
+
+    const isValid = validateForm(e);
+    if (!isValid) return;
+
     setIsSubmitting(true);
 
     try {
@@ -62,7 +67,6 @@ const Referrals = () => {
         handleSuccess()
       }
     } catch (err) {
-      console.log('i ran')
       setRes(
         {
           text: ERR_MSG,
@@ -80,6 +84,7 @@ const Referrals = () => {
       class: 'success-modal'
     })
     setShowModal(true)
+    clear()
 
     setTimeout(() => {
 
@@ -92,6 +97,36 @@ const Referrals = () => {
       setRes('')
       setIsSubmitting(false);
     }, 4000)
+  }
+
+  const [errors, setErrors] = useState(null);
+
+  const validateForm = (e) => {
+    const required = ['firstName', 'lastName', 'businessEmail', 'businessWebsite']
+    let ers = {};
+
+    Array.prototype.forEach.call(e.target.elements, (element) => {
+      const { name, value } = element
+
+      if (required.includes(name) && value === '') {
+        ers[name] = true;
+      }
+      if (name === 'businessEmail' && value !== '' && value.search(/@/) === -1) {
+        ers[name] = true;
+      }
+    })
+    setErrors(ers);
+    const isErrors = Object.keys(ers).length;
+    if (isErrors) {
+      scroll.scrollToTop({ duration: 100 });
+      return false;
+    }
+
+    return true;
+  }
+
+  const clear = () => {
+    form.current.reset();
   }
 
 
@@ -110,10 +145,10 @@ const Referrals = () => {
         </h1>
         <p>Know any merchants that need our services? Introduce us and enjoy the rewards of our Partner Referral Program.</p>
         <form ref={form} onSubmit={sendEmail}>
-          <Input type={'firstName'} label={'First Name'} ph='First Name' />
-          <Input type={'lastName'} label={'Last Name'} ph='Last Name' />
-          <Input type={'businessEmail'} label={'Business Email'} ph={'Business Email'} />
-          <Input type={'businessWebsite'} label={'Business Website'} ph={'Business Website'} />
+          <Input type={'firstName'} label={'First Name'} ph='First Name' err={errors && errors['firstName']} />
+          <Input type={'lastName'} label={'Last Name'} ph='Last Name' err={errors && errors['lastName']} />
+          <Input type={'businessEmail'} label={'Business Email'} ph={'Business Email'} err={errors && errors['businessEmail']} />
+          <Input type={'businessWebsite'} label={'Business Website'} ph={'Business Website'} err={errors && errors['businessWebsite']} />
           <Input type={'annualRevenue'} label={'Annual Revenue'} ph={'Annual Revenue'} />
           <Input type={'eCommercePlatform'} label={'E-Commerce Platform'} ph={'E-Commerce Platform'} />
           <Input type={'country'} label={'Country'} ph={'Country'} />

@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { data } from '../SEO';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
+import { animateScroll as scroll } from 'react-scroll'
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -54,15 +55,18 @@ const Contact = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
+
+    const isValid = validateForm(e);
+    if (!isValid) return;
+
     setIsSubmitting(true);
 
     try {
       const res = await emailjs.sendForm(data.ENV.SERVICE_ID, data.ENV.TEMPLATE_ID, form.current, data.ENV.PUBLIC_KEY)
       if (res.text === 'OK') {
-        handleSuccess()
+        handleSuccess(e)
       }
     } catch (err) {
-      console.log('i ran')
       setRes(
         {
           text: ERR_MSG,
@@ -74,11 +78,13 @@ const Contact = () => {
   }
 
   const handleSuccess = () => {
+
     setRes({
       text: SUCCESS_MSG,
       class: 'success-modal'
     })
     setShowModal(true)
+    clear()
 
     setTimeout(() => {
 
@@ -91,6 +97,36 @@ const Contact = () => {
       setRes('')
       setIsSubmitting(false);
     }, 4000)
+  }
+
+  const [errors, setErrors] = useState(null);
+
+  const validateForm = (e) => {
+    const required = ['name', 'email', 'companyName']
+    let ers = {};
+
+    Array.prototype.forEach.call(e.target.elements, (element) => {
+      const { name, value } = element
+
+      if (required.includes(name) && value === '') {
+        ers[name] = true;
+      }
+      if (name === 'email' && value !== '' && value.search(/@/) === -1) {
+        ers[name] = true;
+      }
+    })
+    setErrors(ers);
+    const isErrors = Object.keys(ers).length;
+    if (isErrors) {
+      scroll.scrollToTop({ duration: 100 });
+      return false;
+    }
+
+    return true;
+  }
+
+  const clear = () => {
+    form.current.reset();
   }
 
   return (
@@ -107,9 +143,10 @@ const Contact = () => {
           Interested In Working <span>With Us?</span>
         </h1>
         <form ref={form} onSubmit={sendEmail}>
-          <Input type={'name'} label={'What should we call you?'} ph='Full Name' />
-          <Input type={'email'} label={"What's your email?"} ph='Email' />
-          <Input type={'companyName'} label={"What's the name of your Company?"} ph='Company' />
+
+          <Input type={'name'} label={'What should we call you? *'} ph='Full Name' err={errors && errors['name']} />
+          <Input type={'email'} label={"What's your email? *"} ph='Email' err={errors && errors['email']} />
+          <Input type={'companyName'} label={"What's the name of your Company? *"} ph='Company' err={errors && errors['companyName']} />
           <Input type={'companyWebsite'} label={"What's your company's website?"} ph='Website' />
           <Input type={'eCommercePlatform'} label={'Which eCommerce platform are you using?'} ph='eCommerce Platform' />
           <Input type={'revenue'} label={"What's your eCommerce store's monthly revenue?"} ph='Monthly Revenue' />
