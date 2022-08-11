@@ -4,6 +4,8 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import Input from '../components/input-w-label/input';
 import emailjs from '@emailjs/browser';
 import { data } from '../SEO';
+import { useLoaderData } from '@remix-run/react';
+import { json } from '@remix-run/node';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -17,7 +19,18 @@ export const meta = () => ({
   keywords: data
 });
 
+export async function loader() {
+  return json({
+    ENV: {
+      SERVICE_ID: process.env.EMAIL_JS_SERVICE_ID,
+      PUBLIC_KEY: process.env.EMAIL_JS_PUBLIC_KEY,
+      TEMPLATE_ID: process.env.EMAIL_JS_TEMPLATE_ID_REFFERAL
+    },
+  });
+}
+
 const Referrals = () => {
+  const data = useLoaderData();
 
   const options = {
     root: null,
@@ -34,7 +47,7 @@ const Referrals = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_lgeapfc', 'template_xwl5bk6', form.current, 'tx_aPr5F2gj0cIdKQ')
+    emailjs.sendForm(data.ENV.SERVICE_ID, data.ENV.TEMPLATE_ID, form.current, data.ENV.PUBLIC_KEY)
       .then((result) => {
         if (result.text === 'OK') {
           handleSuccess()
