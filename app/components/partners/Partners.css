@@ -8,6 +8,7 @@
   overflow: hidden;
 }
 
+
 .Partners-titles {
   display: flex;
   flex-direction: row-reverse;
@@ -16,6 +17,13 @@
 
 .Partners-titles div {
    padding-top: 2em;
+
+}
+
+@media only screen and (min-width: 1006px) and (max-width: 1010px) {
+	.Partners-titles div:last-child {
+    padding-top: 14em !important;
+ }
 }
 
 .Partners-titles div:first-child{
