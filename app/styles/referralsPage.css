@@ -21,8 +21,37 @@
 
   opacity: 0;
   animation: enter 350ms forwards ease;
-
 }
+
+.success-modal p {
+  color: var(--color-black);
+  font-family: var(--font-prim);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.error-modal {
+  box-shadow: var(--shadow);
+  width: auto;
+  padding: .5em 1.5em;
+  height: auto;
+  position: sticky;
+  bottom: 1em;
+  border-radius: 10px;
+  opacity: 0;
+  animation: enter 350ms forwards ease;
+
+  background-color: rgb(127, 22, 22);
+  color: var(--color-white);
+}
+
+.error-modal p {
+  color: var(--color-white);
+  font-family: var(--font-prim);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 
 .exit-modal {
   animation: exit 350ms forwards;
@@ -53,32 +82,6 @@
   to {
     opacity: 0;
   }
-}
-
-.success-modal p {
-  color: var(--color-black);
-  font-family: var(--font-prim);
-  font-size: 1.4rem;
-  font-weight: 700;
-
-}
-.success-modal {
-  box-shadow: var(--shadow);
-  width: auto;
-  padding: .5em 1.5em;
-  height: auto;
-  position: sticky;
-  bottom: 1em;
-  border-radius: 10px;
-  background-color: rgb(225, 225, 225);
-
-  opacity: 0;
-  animation: enter 350ms forwards ease;
-
-}
-
-.exit-modal {
-  animation: exit 350ms forwards;
 }
 
 @keyframes enter {

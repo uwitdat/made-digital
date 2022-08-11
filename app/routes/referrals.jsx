@@ -29,6 +29,9 @@ export async function loader() {
   });
 }
 
+const SUCCESS_MSG = "We'll be in touch! 🎉"
+const ERR_MSG = 'Something went wrong.'
+
 const Referrals = () => {
   const data = useLoaderData();
 
@@ -39,26 +42,44 @@ const Referrals = () => {
   };
 
   const [container, isVisible] = useIntersectionObserver(options);
-  const [success, setSuccess] = useState(false)
+  const [showModal, setShowModal] = useState(false)
   const [fade, setFade] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [res, setRes] = useState({
+    text: '',
+    class: ''
+  })
 
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    emailjs.sendForm(data.ENV.SERVICE_ID, data.ENV.TEMPLATE_ID, form.current, data.ENV.PUBLIC_KEY)
-      .then((result) => {
-        if (result.text === 'OK') {
-          handleSuccess()
+    try {
+      const res = await emailjs.sendForm(data.ENV.SERVICE_ID, data.ENV.TEMPLATE_ID, form.current, data.ENV.PUBLIC_KEY)
+      if (res.text === 'OK') {
+        handleSuccess()
+      }
+    } catch (err) {
+      console.log('i ran')
+      setRes(
+        {
+          text: ERR_MSG,
+          class: 'error-modal'
         }
-      }, (error) => {
-        console.log(error.text);
-      });
-  };
+      )
+      setShowModal(true);
+    }
+  }
+
 
   const handleSuccess = () => {
-    setSuccess(true)
+    setRes({
+      text: SUCCESS_MSG,
+      class: 'success-modal'
+    })
+    setShowModal(true)
 
     setTimeout(() => {
 
@@ -67,7 +88,9 @@ const Referrals = () => {
 
     setTimeout(() => {
       setFade(false)
-      setSuccess(false)
+      setShowModal(false)
+      setRes('')
+      setIsSubmitting(false);
     }, 4000)
   }
 
@@ -95,12 +118,12 @@ const Referrals = () => {
           <Input type={'eCommercePlatform'} label={'E-Commerce Platform'} ph={'E-Commerce Platform'} />
           <Input type={'country'} label={'Country'} ph={'Country'} />
           <Input type={'referral'} label={'What company/party referred you?'} ph={'What company/party referred you?'} />
-          <button disabled={success} type="submit">Submit</button>
+          <button disabled={isSubmitting} type="submit">Submit</button>
         </form>
       </div>
-      {success && (
-        <div className={fade ? 'success-modal exit-modal' : 'success-modal'}>
-          <p>We'll be in touch! 🎉</p>
+      {showModal && (
+        <div className={fade ? `${res.class} exit-modal` : `${res.class}`}>
+          <p>{res.text}</p>
         </div>
       )}
     </div>
