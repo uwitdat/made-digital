@@ -145,10 +145,10 @@ const Referrals = () => {
         </h1>
         <p>Know any merchants that need our services? Introduce us and enjoy the rewards of our Partner Referral Program.</p>
         <form ref={form} onSubmit={sendEmail}>
-          <Input type={'firstName'} label={'First Name'} ph='First Name' err={errors && errors['firstName']} />
-          <Input type={'lastName'} label={'Last Name'} ph='Last Name' err={errors && errors['lastName']} />
-          <Input type={'businessEmail'} label={'Business Email'} ph={'Business Email'} err={errors && errors['businessEmail']} />
-          <Input type={'businessWebsite'} label={'Business Website'} ph={'Business Website'} err={errors && errors['businessWebsite']} />
+          <Input type={'firstName'} label={'First Name*'} ph='First Name' err={errors && errors['firstName']} />
+          <Input type={'lastName'} label={'Last Name*'} ph='Last Name' err={errors && errors['lastName']} />
+          <Input type={'businessEmail'} label={'Business Email*'} ph={'Business Email'} err={errors && errors['businessEmail']} />
+          <Input type={'businessWebsite'} label={'Business Website*'} ph={'Business Website'} err={errors && errors['businessWebsite']} />
           <Input type={'annualRevenue'} label={'Annual Revenue'} ph={'Annual Revenue'} />
           <Input type={'eCommercePlatform'} label={'E-Commerce Platform'} ph={'E-Commerce Platform'} />
           <Input type={'country'} label={'Country'} ph={'Country'} />
