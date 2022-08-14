@@ -9,6 +9,14 @@
 }
 
 
+@media only screen and (max-width: 1281px){
+  .Partners {
+    margin-top: 5em;
+  }
+}
+
+
+
 .Partners-titles {
   display: flex;
   flex-direction: row-reverse;
@@ -20,11 +28,11 @@
 
 }
 
-@media only screen and (min-width: 1006px) and (max-width: 1010px) {
+/* @media only screen and (min-width: 1006px) and (max-width: 1010px) {
 	.Partners-titles div:last-child {
     padding-top: 14em !important;
  }
-}
+} */
 
 .Partners-titles div:first-child{
   display: flex;
