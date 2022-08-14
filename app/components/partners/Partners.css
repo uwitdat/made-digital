@@ -78,7 +78,15 @@
   height: 3.8rem;
   width: auto;
   object-fit:cover;
+
+}
+
+.filter {
   filter: brightness(0) saturate(100%) invert(100%) sepia(39%) saturate(2237%) hue-rotate(169deg) brightness(124%) contrast(111%);
+}
+
+#icon-xl {
+  width: 11rem;
 }
 
 .icons svg {
@@ -114,10 +122,25 @@
   width: 70%;
   -ms-overflow-style: none;
   position: relative;
+
 }
 
-.carousel::-webkit-scrollbar {
+/* .carousel::-webkit-scrollbar {
   display: none;
+} */
+
+.carousel::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+.carousel::-webkit-scrollbar-track {
+  background: transparent        /* color of the tracking area */
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.12);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 6px solid rgb(7, 7, 7)  /* creates padding around scroll thumb */
 }
 
 
@@ -143,8 +166,8 @@
   align-items: center;
   /* gap: 3em; */
   position: relative;
-  padding-top: 4em;
-  padding-bottom: 5em;
+  /* padding-top: 4em;
+  padding-bottom: 5em; */
   position: relative;
   /* padding-left: 2em; */
   /* width: 70%; */
@@ -152,6 +175,10 @@
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+#gorgias-icon {
+  height: 2rem;
 }
 
 .meet-partners {
@@ -185,8 +212,16 @@
     height: 3rem;
   }
 
+  #icon-xl {
+    width: 9rem;
+  }
+
   .icons {
     padding-bottom: 0;
+  }
+
+  #gorgias-icon {
+    height: 1.8rem;
   }
 
 }
@@ -197,6 +232,7 @@
     width: 20rem;
     height: 25rem;
   }
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -212,6 +248,10 @@
 
   .carousel {
     width: 100%;
+  }
+
+  .icons {
+    padding-top: 4em;
   }
 
 }
@@ -237,6 +277,15 @@
   .icons img {
     height: 2.5rem;
   }
+
+  #icon-xl {
+    width: 7rem;
+  }
+
+  #gorgias-icon {
+    height: 1.5rem;
+  }
+
 }
 
 @media only screen and (max-width: 500px) {

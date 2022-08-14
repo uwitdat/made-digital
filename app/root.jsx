@@ -49,7 +49,10 @@ export default function App() {
   const password = data.ENV.PASSWORD;
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (process.env.NODE_ENV === 'production') {
+      window.scrollTo(0, 0)
+    }
+
   }, [])
 
   return (

@@ -3,6 +3,7 @@ import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import React, { useState, createRef, useRef, useEffect } from 'react';
 import { IconsTabOne, IconsTabTwo } from '../icons-tab';
 import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
+import { IconsTabThree } from '../icons-tab/IconsTabs';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -26,7 +27,7 @@ const Partners = () => {
   const [containerThree, isPartnersVisible] = useIntersectionObserver(options);
   const [current, setCurrent] = useState(0);
 
-  const icons = [<IconsTabOne />, <IconsTabTwo />];
+  const icons = [<IconsTabOne />, <IconsTabTwo />, <IconsTabThree />];
 
   const elementsRef = useRef(icons.map(() => createRef()));
 
