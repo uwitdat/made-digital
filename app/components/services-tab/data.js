@@ -19,7 +19,7 @@ export const services = [
     },
     {
         title: 'Site Performance Enhancement',
-        des: "Migrating between platforms can be pretty daunting, but we have you covered. Most of our Shopify Plus projects involve migrating from Magento, SFCC, BigCommerce and other platforms. If we’re handling your brand’s replatforming project, trust us - we’ve been there many times before: Your data will be transferred seamlessly.",
+        des: "A slow website can decrease your conversion rate, increase your bounce rate, and make for a crappy customer experience. We’re committed to making your website become the blazing fast engine that it was meant to be.",
         icon: <GiBeamWake />
     },
     // {
