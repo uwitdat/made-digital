@@ -20,8 +20,9 @@ export const meta = () => ({
   charset: 'utf-8',
   title: 'Made Digital',
   viewport: 'width=device-width,initial-scale=1',
-  description: 'A leading eCommerce agency that specializes in website strategy and development services.',
-  keywords: data
+  description:
+    'A leading eCommerce agency that specializes in website strategy and development services.',
+  keywords: data,
 });
 
 export function links() {
@@ -44,16 +45,20 @@ export async function loader() {
 }
 
 export default function App() {
-  const [authed, setAuthed] = useState(process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production' ? true : false);
+  const [authed, setAuthed] = useState(
+    process.env.NODE_ENV === 'development' ||
+      process.env.NODE_ENV === 'production'
+      ? true
+      : false
+  );
   const data = useLoaderData();
   const password = data.ENV.PASSWORD;
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-      window.scrollTo(0, 0)
+      window.scrollTo(0, 0);
     }
-
-  }, [])
+  }, []);
 
   return (
     <Document>
