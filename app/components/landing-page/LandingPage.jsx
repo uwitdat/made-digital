@@ -1,7 +1,5 @@
 import styles from './LandingPage.css';
 import { Link } from '@remix-run/react';
-// import BG from '../../../public/assets/vg-7.jpg';
-import BG from '../../../public/assets/bg.jpg';
 import {
   IncMonthlySales,
   links as monthlySalesLinks,
@@ -52,29 +50,47 @@ const LandingPage = ({ scrollTo }) => {
       className={isRefVisible ? 'Landing clear fade-in' : 'Landing clear'}
     >
       <main className="Main">
-        <img src={BG} alt="Made Digital background" className="Main-bg-img" />
+        <img
+          src="/assets/bg.jpg"
+          alt="Made Digital background"
+          className="Main-bg-img"
+        />
         <section className="Main-content">
           <h1>
             Made <span> Digital</span>
           </h1>
-          <h5>
+          <h2>
             A leading eCommerce agency that specializes in website strategy and
             development services.
-          </h5>
+          </h2>
           <Link to="#landing-video">
             <button>Learn More</button>
           </Link>
         </section>
       </main>
       <section className="LandingVideo" id="landing-video">
-        <div className={isRefVisibleTwo ? "LandingVideo-content push-left swing-right" : "LandingVideo-content push-left"} ref={containerTwo}>
+        <div
+          className={
+            isRefVisibleTwo
+              ? 'LandingVideo-content push-left swing-right'
+              : 'LandingVideo-content push-left'
+          }
+          ref={containerTwo}
+        >
           <h2>Meet Ademola</h2>
           <p>One of the co-founders of Made Digital.</p>
         </div>
 
-        <iframe ref={containerThree} className={isRefVisibleThree ? 'tolstoy fade-in' : 'tolstoy clear'} id="tolstoy" src="https://player.gotolstoy.com/62n0hdjcjb8fn?host"
-          scrolling="no" frameBorder="0" allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;">
-        </iframe>
+        <iframe
+          title="Made Digital Landing Video"
+          ref={containerThree}
+          className={isRefVisibleThree ? 'tolstoy fade-in' : 'tolstoy clear'}
+          id="tolstoy"
+          src="https://player.gotolstoy.com/62n0hdjcjb8fn?host"
+          scrolling="no"
+          frameBorder="0"
+          allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;"
+        ></iframe>
       </section>
 
       <IncMonthlySales />

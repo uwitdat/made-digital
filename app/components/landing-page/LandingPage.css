@@ -162,7 +162,7 @@
     -moz-text-fill-color: transparent;
   } */
 
-  .Main-content h5 {
+  .Main-content h2 {
     font-size: 1.7rem;
     font-family: var(--font-sec);
     line-height: 1.2;

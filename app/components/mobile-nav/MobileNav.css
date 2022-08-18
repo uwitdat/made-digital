@@ -39,7 +39,7 @@
   }
 }
 
-.MobileNav a li {
+.MobileNav li {
   font-family: var(--font-prim);
   font-size: 2rem;
   margin-block: .3em;
@@ -50,7 +50,7 @@
   animation: in 1s ease forwards 450ms; */
 }
 
-.MobileNav a li:hover {
+.MobileNav li:hover {
   text-decoration: underline;
 }
 

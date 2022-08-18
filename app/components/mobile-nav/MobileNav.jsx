@@ -5,7 +5,6 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from '@remix-run/react';
 import disableScroll from 'disable-scroll';
 
-
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
 }
@@ -47,19 +46,21 @@ const MobileNav = ({ isOpen, handleCloseMenu, handleOpenMenu }) => {
       )}
       {isOpen ? (
         <ul className="MobileNav">
+          <li onClick={handleCloseMenu}>
+            <Link to={`/?to=services`}>Services</Link>
+          </li>
 
-          <Link to={`/?to=services`}>
-            <li onClick={handleCloseMenu}>Services</li>
-          </Link>
-          <Link to={`/?to=testimonials`}>
-            <li onClick={handleCloseMenu}>Testimonials</li>
-          </Link>
-          <Link to={`/about`}>
-            <li onClick={handleCloseMenu}>About</li>
-          </Link>
-          <Link to={`/contact`}>
-            <li onClick={handleCloseMenu}>Contact</li>
-          </Link>
+          <li onClick={handleCloseMenu}>
+            <Link to={`/?to=testimonials`}>Testimonials</Link>
+          </li>
+
+          <li onClick={handleCloseMenu}>
+            <Link to={`/about`}>About</Link>
+          </li>
+
+          <li onClick={handleCloseMenu}>
+            <Link to={`/contact`}>Contact</Link>
+          </li>
         </ul>
       ) : null}
     </nav>

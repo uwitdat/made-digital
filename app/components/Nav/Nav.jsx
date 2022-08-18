@@ -81,42 +81,37 @@ const Nav = () => {
           />
         ) : (
           <ul className={isScrolling ? 'navList hide' : 'navList'}>
-            <Link to={`/?to=services`}>
-              <li
-                className={
-                  currentTab === 'services' ? 'nav-item active' : 'nav-item'
-                }
-              >
-                Services
-              </li>
-            </Link>
-            <Link to={`/?to=testimonials`}>
-              <li
-                className={
-                  currentTab === 'testimonials' ? 'nav-item active' : 'nav-item'
-                }
-              >
-                Testimonials
-              </li>
-            </Link>
-            <Link to={`/about`}>
-              <li
-                className={
-                  currentTab === 'about' ? 'nav-item active' : 'nav-item'
-                }
-              >
-                About
-              </li>
-            </Link>
-            <Link to={`/contact`}>
-              <li
-                className={
-                  currentTab === 'contact' ? 'nav-item active' : 'nav-item'
-                }
-              >
-                Contact
-              </li>
-            </Link>
+            <li
+              className={
+                currentTab === 'services' ? 'nav-item active' : 'nav-item'
+              }
+            >
+              <Link to={`/?to=services`}>Services</Link>
+            </li>
+
+            <li
+              className={
+                currentTab === 'testimonials' ? 'nav-item active' : 'nav-item'
+              }
+            >
+              <Link to={`/?to=testimonials`}>Testimonials</Link>
+            </li>
+
+            <li
+              className={
+                currentTab === 'about' ? 'nav-item active' : 'nav-item'
+              }
+            >
+              <Link to={`/about`}>About</Link>
+            </li>
+
+            <li
+              className={
+                currentTab === 'contact' ? 'nav-item active' : 'nav-item'
+              }
+            >
+              <Link to={`/contact`}>Contact</Link>
+            </li>
           </ul>
         )}
       </div>

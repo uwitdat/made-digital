@@ -68,6 +68,7 @@
 
   .logo {
     width: 9rem;
+    height: auto;
     cursor: pointer;
     transition: all 450ms;
   }

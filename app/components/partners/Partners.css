@@ -110,8 +110,9 @@
 
 }
 
-.Partners p {
+.Partners h2 {
   font-family: var(--font-sec);
+  font-weight: 300;
   font-size: 1.3rem;
 }
 

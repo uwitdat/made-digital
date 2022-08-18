@@ -11,7 +11,7 @@ import React, { useEffect, useState } from 'react';
 import globalStyles from './styles/globals.css';
 import { Nav, links as primaryNavLinks } from './components/Nav';
 import { links as footerLinks } from './components/footer';
-import { Auth, links as authLinks } from './components/auth';
+// import { Auth, links as authLinks } from './components/auth';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import { data } from './SEO';
@@ -29,7 +29,7 @@ export function links() {
   return [
     ...footerLinks(),
     ...primaryNavLinks(),
-    ...authLinks(),
+    // ...authLinks(),
     { rel: 'stylesheet', href: styles },
     { rel: 'stylesheet', href: globalStyles },
     { rel: 'icon', href: 'favicon.ico', type: 'image/png' },
@@ -45,14 +45,14 @@ export async function loader() {
 }
 
 export default function App() {
-  const [authed, setAuthed] = useState(
-    process.env.NODE_ENV === 'development' ||
-      process.env.NODE_ENV === 'production'
-      ? true
-      : false
-  );
-  const data = useLoaderData();
-  const password = data.ENV.PASSWORD;
+  // const [authed, setAuthed] = useState(
+  //   process.env.NODE_ENV === 'development' ||
+  //     process.env.NODE_ENV === 'production'
+  //     ? true
+  //     : false
+  // );
+  // const data = useLoaderData();
+  // const password = data.ENV.PASSWORD;
 
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
@@ -62,14 +62,14 @@ export default function App() {
 
   return (
     <Document>
-      {authed ? (
-        <React.Fragment>
-          <Nav />
-          <Outlet />
-        </React.Fragment>
-      ) : (
+      {/* {authed ? ( */}
+      <React.Fragment>
+        <Nav />
+        <Outlet />
+      </React.Fragment>
+      {/* ) : (
         <Auth setAuthed={setAuthed} password={password} />
-      )}
+      )} */}
     </Document>
   );
 }

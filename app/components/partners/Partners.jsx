@@ -1,8 +1,7 @@
 import styles from './Partners.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import React, { useState, createRef, useRef, useEffect } from 'react';
+import React, { createRef, useRef } from 'react';
 import { IconsTabOne, IconsTabTwo } from '../icons-tab';
-import { BiLeftArrow, BiRightArrow } from 'react-icons/bi';
 import { IconsTabThree } from '../icons-tab/IconsTabs';
 
 export function links() {
@@ -25,42 +24,9 @@ const Partners = () => {
   const [container, isTitleVisible] = useIntersectionObserver(options);
   const [containerTwo, isImgsVisible] = useIntersectionObserver(optionsImg);
   const [containerThree, isPartnersVisible] = useIntersectionObserver(options);
-  const [current, setCurrent] = useState(0);
 
   const icons = [<IconsTabOne />, <IconsTabTwo />, <IconsTabThree />];
-
   const elementsRef = useRef(icons.map(() => createRef()));
-
-  const numOfClicks = icons.length - 1;
-
-  const [clicks, setClicks] = useState(numOfClicks);
-  const [goingUp, setGoingUp] = useState(true);
-
-  const scroll = () => {
-    if (goingUp) {
-      elementsRef.current[current + 1].current.scrollIntoView();
-      setCurrent(current + 1);
-      setClicks(clicks - 1);
-    } else {
-      elementsRef.current[current - 1].current.scrollIntoView();
-      setCurrent(current - 1);
-      setClicks(clicks - 1);
-    }
-  };
-
-  // const TIMER = 4000;
-
-  // useEffect(() => {
-  //   if (clicks === 0) {
-  //     setGoingUp(!goingUp);
-  //     setClicks(numOfClicks);
-  //   }
-
-  //   // const interval = setInterval(() => {
-  //   //   scroll();
-  //   // }, TIMER);
-  //   // return () => clearInterval(interval);
-  // }, [clicks])
 
   return (
     <main className="Partners">
@@ -81,10 +47,10 @@ const Partners = () => {
           className={isTitleVisible ? 'push-left swing-right' : 'push-left'}
         >
           <h1>Partnerships</h1>
-          <p>
+          <h2>
             We’ve partnered with some of the biggest players in the eCommerce
             space.
-          </p>
+          </h2>
           <h3>
             We specialize in quite a few things, but we can’t do it all.
             Thankfully, we’ve partnered with some of the best technologies and
