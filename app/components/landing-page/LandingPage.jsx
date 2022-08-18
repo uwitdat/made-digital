@@ -81,7 +81,7 @@ const LandingPage = ({ scrollTo }) => {
           <p>One of the co-founders of Made Digital.</p>
         </div>
 
-        <iframe
+        {/* <iframe
           title="Made Digital Landing Video"
           ref={containerThree}
           className={isRefVisibleThree ? 'tolstoy fade-in' : 'tolstoy clear'}
@@ -90,7 +90,7 @@ const LandingPage = ({ scrollTo }) => {
           scrolling="no"
           frameBorder="0"
           allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;"
-        ></iframe>
+        ></iframe> */}
       </section>
 
       <IncMonthlySales />
