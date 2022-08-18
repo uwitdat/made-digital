@@ -1,4 +1,3 @@
-import React from 'react';
 import BIG_ICON from '../../../public/icons/bigcommerce-icon.svg';
 import NICE_ICON from '../../../public/icons/NICE_Icon-Color.svg';
 import GORGIAS_ICON from '../../../public/icons/gorgias_logo_white.png';

@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from '../styles/aboutPage.css';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { data } from '../SEO';

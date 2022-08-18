@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from '../styles/contactPage.css';
 import Input from '../components/input-w-label/input';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';

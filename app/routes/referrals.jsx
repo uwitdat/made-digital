@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import styles from '../styles/referralsPage.css';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import Input from '../components/input-w-label/input';

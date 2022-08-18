@@ -1,6 +1,6 @@
 import styles from './Partners.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
-import React, { createRef, useRef } from 'react';
+import { createRef, useRef } from 'react';
 import { IconsTabOne, IconsTabTwo } from '../icons-tab';
 import { IconsTabThree } from '../icons-tab/IconsTabs';
 

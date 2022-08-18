@@ -7,12 +7,10 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import styles from './styles/reset.css';
-import React, { useEffect, useState } from 'react';
 import globalStyles from './styles/globals.css';
 import { Nav, links as primaryNavLinks } from './components/Nav';
 import { links as footerLinks } from './components/footer';
-// import { Auth, links as authLinks } from './components/auth';
-import { useLoaderData } from '@remix-run/react';
+
 import { json } from '@remix-run/node';
 import { data } from './SEO';
 
@@ -54,11 +52,11 @@ export default function App() {
   // const data = useLoaderData();
   // const password = data.ENV.PASSWORD;
 
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      window.scrollTo(0, 0);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     window.scrollTo(0, 0);
+  //   }
+  // }, []);
 
   return (
     <Document>

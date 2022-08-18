@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Testimonials.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { testimonials } from './data';

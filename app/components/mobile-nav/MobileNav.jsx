@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './MobileNav.css';
 import { CgMenuMotion } from 'react-icons/cg';
 import { AiOutlineClose } from 'react-icons/ai';

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import MADE_LOGO_WHITE from '../../../public/assets//made-logo-white.png';
 import styles from './Nav.css';
 import { useLocation } from '@remix-run/react';

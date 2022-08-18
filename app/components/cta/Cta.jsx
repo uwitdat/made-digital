@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Cta.css';
 import { Footer } from '../footer';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
