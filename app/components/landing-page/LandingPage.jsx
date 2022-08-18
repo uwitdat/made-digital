@@ -41,8 +41,8 @@ const LandingPage = ({ scrollTo }) => {
   }, [scrollTo]);
 
   const [container, isRefVisible] = useIntersectionObserver(options);
-  // const [containerTwo, isRefVisibleTwo] = useIntersectionObserver(options);
-  // const [containerThree, isRefVisibleThree] = useIntersectionObserver(options);
+  const [containerTwo, isRefVisibleTwo] = useIntersectionObserver(options);
+  const [containerThree, isRefVisibleThree] = useIntersectionObserver(options);
 
   return (
     <div
@@ -68,7 +68,7 @@ const LandingPage = ({ scrollTo }) => {
           </Link>
         </section>
       </main>
-      {/*   <section className="LandingVideo" id="landing-video">
+      <section className="LandingVideo" id="landing-video">
         <div
           className={
             isRefVisibleTwo
@@ -91,7 +91,7 @@ const LandingPage = ({ scrollTo }) => {
           frameBorder="0"
           allow="autoplay *; clipboard-write *;camera *; microphone *; encrypted-media *; fullscreen *; display-capture *;"
         ></iframe>
-        </section>  */}
+      </section>
 
       <IncMonthlySales />
       <Partners />
