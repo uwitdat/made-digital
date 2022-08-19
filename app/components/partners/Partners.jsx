@@ -2,7 +2,6 @@ import styles from './Partners.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { createRef, useRef } from 'react';
 import { IconsTabOne, IconsTabTwo } from '../icons-tab';
-import { IconsTabThree } from '../icons-tab/IconsTabs';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -25,7 +24,7 @@ const Partners = () => {
   const [containerTwo, isImgsVisible] = useIntersectionObserver(optionsImg);
   const [containerThree, isPartnersVisible] = useIntersectionObserver(options);
 
-  const icons = [<IconsTabOne />, <IconsTabTwo />, <IconsTabThree />];
+  const icons = [<IconsTabOne />, <IconsTabTwo />];
   const elementsRef = useRef(icons.map(() => createRef()));
 
   return (
