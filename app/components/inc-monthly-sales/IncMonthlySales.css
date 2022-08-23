@@ -32,16 +32,31 @@
 
 
   .IncMonthlySales-container h2{
-    color: white;
+    color: var(--color-white);
     font-weight: 300;
     font-family: var(--font-sec);
     margin-left: 5em;
     margin-top: 2em;
   }
 
+  #bullets {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 1.5em;
+    margin-left: 1em;
+  }
+
+  #bullets::before {
+    content: '•';
+    color: var(--color-white);
+    margin-right: .5em;
+  }
+
+
   .IncMonthlySales-container div {
     height: 30rem; width: 20rem;
     flex-shrink: 0;
+    
   }
 
   .IncMonthlySales-container div:nth-child(2){
@@ -68,7 +83,7 @@
 
   /* Media Queries large - small */
 
-  @media only screen and (max-width: 1222px) {
+  @media only screen and (max-width: 1422px) {
     .IncMonthlySales-container div {
       height: 25rem; 
       width: 15rem;
@@ -76,7 +91,7 @@
   }
 
 
-  @media only screen and (max-width: 1010px) {
+  @media only screen and (max-width: 1210px) {
     .IncMonthlySales-container {
       margin-bottom: 2em;
     }
@@ -102,7 +117,11 @@
   }
 
 
-  @media only screen and (max-width: 935px) {
+  @media only screen and (max-width: 1135px) {
+    .IncMonthlySales-container { 
+      padding-block: 2em;
+    }
+
     .IncMonthlySales-container div:nth-child(2){
       display: none;
     }
@@ -122,7 +141,7 @@
   }
 
 
-  @media only screen and (max-width: 625px) {
+  @media only screen and (max-width: 825px) {
     .IncMonthlySales-container div:first-child{
       display: none;
     }
@@ -142,5 +161,18 @@
 
     .IncMonthlySales-container{
       text-align: center;
+    }
+
+    #bullets {
+      text-align: start;
+    }
+
+    #bullets:first-child {
+      margin-top: 3.5em;
+    }
+
+    #bullets {
+      margin-top: 2.2em;
+      font-size: 1rem;
     }
   }

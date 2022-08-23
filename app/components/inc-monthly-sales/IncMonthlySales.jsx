@@ -23,7 +23,7 @@ const IncMonthlySales = () => {
           className={isTitleVisible ? 'push-left swing-right' : 'push-left'}
           ref={container}
         >
-          <span>Increase</span> Your Monthly Sales.
+          Why Made Digital?
         </h1>
       </div>
       <div
@@ -47,9 +47,11 @@ const IncMonthlySales = () => {
           className={isTextVisible ? 'push-right swing-left' : 'push-right'}
           ref={containerThree}
         >
-          With over 8 years of collective experience in eCommerce, we've helped
-          150+ business owners build and scale their stores, and we're excited
-          to help you too!
+          With over 8 years of collective experience in eCommerce, we’ve helped 150+ business owners build and scale their stores. Here’s how we’re different:
+
+          <span id='bullets'>We start by challenging your assumptions and finding the real causes of your problems.</span>
+          <span id='bullets'>We don’t use playbooks, and every solution is custom-tailored to your needs.</span>
+          <span id='bullets'>We don’t hide behind jargon.</span>
         </h2>
       </div>
     </section>

@@ -1,10 +1,10 @@
 import { FaConnectdevelop } from 'react-icons/fa';
-import { GiPlatform, GiBeamWake, GiChart, GiDatabase } from 'react-icons/gi';
+import { GiPlatform, GiBeamWake, GiChart } from 'react-icons/gi';
 
 export const services = [
     {
         title: 'Customer Retention Rate Optimization',
-        des: "We implement industry-leading conversion strategies. Through direct customer feedback, heat-mapping, A/B testing, and innovative win-back strategies. We'll help you significantly increase your customer retention rates.",
+        des: "A 5% increase in your customer retention rates can lead to a 25-95% increase in profit. We’ll show you how to make your customers feel valued so they’ll keep coming back.",
         icon: <GiChart />
     },
     {
