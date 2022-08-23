@@ -2,6 +2,7 @@ import styles from './Partners.css';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { createRef, useRef } from 'react';
 import { IconsTabOne, IconsTabTwo } from '../icons-tab';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }];
@@ -19,6 +20,8 @@ const Partners = () => {
     rootMargin: '10px',
     threshold: 0,
   };
+
+  const isMobile = useMediaQuery('(max-width: 800px)')
 
   const [container, isTitleVisible] = useIntersectionObserver(options);
   const [containerTwo, isImgsVisible] = useIntersectionObserver(optionsImg);
@@ -41,7 +44,7 @@ const Partners = () => {
           />
         </div>
         <div
-          style={{ paddingTop: '8em' }}
+          style={isMobile ? { paddingTop: '2em' } : { paddingTop: '8em' }}
           ref={container}
           className={isTitleVisible ? 'push-left swing-right' : 'push-left'}
         >
