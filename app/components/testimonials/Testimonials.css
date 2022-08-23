@@ -179,7 +179,6 @@
 }
 
 .Testimonials > div:last-child > img:first-child{
-
   height: 80%;
   width: 60%;
   object-fit: cover;  
@@ -208,6 +207,12 @@
 
   .testimonial-view-more {
     margin-right: 15vw;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 732px) {
+  .testimonial-view-more {
+      margin-top: 3em;
   }
 }
 
